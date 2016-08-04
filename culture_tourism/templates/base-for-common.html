@@ -13,15 +13,15 @@
 	<!-- include the site animate stylesheet -->
 	<link rel="stylesheet" href="{% static 'css/animate.css' %}">
 	<!-- include the site bootstrap stylesheet -->
-	<link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+	<link rel="stylesheet" href="{% static 'css/bootstrap2.css' %}">
 	<!-- include the font awesome stylesheet -->
 	<link rel="stylesheet" href="{% static 'css/font-awesome.min.css' %}">
 	<!-- include the site stylesheet -->
-	<link rel="stylesheet" href="{% static 'css/style.css' %}">
+	<link rel="stylesheet" href="{% static 'css/style2.css' %}">
 	<!-- include the site fonts stylesheet -->
 	<link rel="stylesheet" href="{% static 'css/fonts.css' %}">
 	<!-- include the site responsive stylesheet -->
-	<link rel="stylesheet" href="{% static 'css/responsive.css' %}">
+	<link rel="stylesheet" href="{% static 'css/responsive2.css' %}">
 	<!-- include the site color stylesheet -->
 	<link rel="stylesheet" href="{% static 'css/color/color.css' %}">
 
@@ -86,8 +86,19 @@
 						</div>
 					</nav>
 					<div class="search-area">
-						{% block search %}
-                        {% endblock %}
+                        {% search as search_form %}
+                    <form class="search-box" method="post" action="." name="search">
+        {% csrf_token %}
+            {{ search_form.non_field_errors }}
+            <button class="btn btn-primary btn-xs" style="padding-bottom: 1px" href="#" type="submit" name="search_web"><i class="icon-search"><span></span></i></button>
+            {{ search_form.search_query.errors }}
+            {{ search_form.search_query }}
+        </form>
+        <div class="btn-group">
+            <a href="/en" class="btn btn-primary btn-sm btn-xs">EN</a>
+            <a href="/ru" class="btn btn-primary btn-sm btn-xs">RU</a>
+            <a href="/uz" class="btn btn-primary btn-sm btn-xs">UZ</a>
+        </div>
 					</div>
 				</div>
 			</div>

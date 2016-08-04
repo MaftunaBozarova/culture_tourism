@@ -239,8 +239,8 @@ th {
 
 @font-face {
   font-family: 'Glyphicons Halflings';
-  src: url("fonts/bootstrap/glyphicons-halflings-regular.eot");
-  src: url("fonts/bootstrap/glyphicons-halflings-regulard41d.eot?#iefix") format("embedded-opentype"), url("fonts/bootstrap/glyphicons-halflings-regular.woff2") format("woff2"), url("fonts/bootstrap/glyphicons-halflings-regular.woff") format("woff"), url("fonts/bootstrap/glyphicons-halflings-regular.ttf") format("truetype"), url("fonts/bootstrap/glyphicons-halflings-regular.svg#glyphicons_halflingsregular") format("svg"); }
+  src: url("../fonts/bootstrap/glyphicons-halflings-regular.eot");
+  src: url("../fonts/bootstrap/glyphicons-halflings-regulard41d.eot?#iefix") format("embedded-opentype"), url("../fonts/bootstrap/glyphicons-halflings-regular.woff2") format("woff2"), url("../fonts/bootstrap/glyphicons-halflings-regular.woff") format("woff"), url("../fonts/bootstrap/glyphicons-halflings-regular.ttf") format("truetype"), url("../fonts/bootstrap/glyphicons-halflings-regular.svg#glyphicons_halflingsregular") format("svg"); }
 
 .glyphicon {
   position: relative;
@@ -1071,11 +1071,13 @@ textarea {
   line-height: inherit; }
 
 a {
-  color: #337ab7;
+  color: #252525;
   text-decoration: none; }
-  a:hover, a:focus {
-    color: #23527c;
-    text-decoration: underline; }
+
+a:hover, a:focus {
+    color: #1061db;
+    text-decoration: none;/* ---- 22.07*/
+}
   a:focus {
     outline: thin dotted;
     outline: 5px auto -webkit-focus-ring-color;
@@ -2834,8 +2836,8 @@ fieldset[disabled] a.btn {
 .btn-default {
   color: #6bb4ff;
   background-color: #fff;
-  border-color: #ccc;
-  width:100%;
+  border-color: #ccc; 
+  width: 100%;
 }
   .btn-default:focus, .btn-default.focus {
     color: #333;
@@ -2875,16 +2877,20 @@ fieldset[disabled] a.btn {
 
 .btn-primary {
   color: #fff;
-  background-color: #337ab7;
-  border-color: #2e6da4; }
+  background-color: #1061DB;
+  border-color: #2e6da4; 
+}
+
   .btn-primary:focus, .btn-primary.focus {
     color: #fff;
     background-color: #286090;
     border-color: #122b40; }
   .btn-primary:hover {
     color: #fff;
-    background-color: #286090;
-    border-color: #204d74; }
+    background-color: rgb(16, 60, 219);
+    border-color: #204d74; 
+  }
+
   .btn-primary:active, .btn-primary.active,
   .open > .btn-primary.dropdown-toggle {
     color: #fff;
@@ -2895,7 +2901,7 @@ fieldset[disabled] a.btn {
     .open > .btn-primary.dropdown-toggle:focus,
     .open > .btn-primary.dropdown-toggle.focus {
       color: #fff;
-      background-color: #204d74;
+      background-color: #1061db;
       border-color: #122b40; }
   .btn-primary:active, .btn-primary.active,
   .open > .btn-primary.dropdown-toggle {
@@ -3095,10 +3101,10 @@ fieldset[disabled] a.btn {
     text-decoration: none; }
 
 .btn-lg, .btn-group-lg > .btn {
-  padding: 10px 16px;
-  font-size: 18px;
+  padding: 4px 8px;
+  font-size: 10px;
   line-height: 1.3333333;
-  border-radius: 6px; }
+  border-radius: 3px; }
 
 .btn-sm, .btn-group-sm > .btn {
   padding: 5px 10px;
@@ -3107,9 +3113,9 @@ fieldset[disabled] a.btn {
   border-radius: 3px; }
 
 .btn-xs, .btn-group-xs > .btn {
-  padding: 1px 5px;
+  padding: 0px 4px;
   font-size: 12px;
-  line-height: 1.5;
+  line-height: 20px;
   border-radius: 3px; }
 
 .btn-block {
@@ -3289,7 +3295,8 @@ tbody.collapse.in {
 .btn-group-vertical {
   position: relative;
   display: inline-block;
-  vertical-align: middle; }
+  vertical-align: middle; 
+padding-bottom: 2px;}
   .btn-group > .btn,
   .btn-group-vertical > .btn {
     position: relative;

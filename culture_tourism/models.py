@@ -4,6 +4,7 @@ from redactor.fields import RedactorField
 from django.utils.translation import ugettext as _
 from taggit.managers import TaggableManager
 from treebeard.mp_tree import MP_Node
+from ckeditor.fields import RichTextField
 
 
 class Menyu(MP_Node):
@@ -21,11 +22,17 @@ class Menyu(MP_Node):
 
 class SubArticle(models.Model):
     title = models.CharField(max_length=255, blank=True, null=True)
-    body = RedactorField(verbose_name=u'Text')
+    body = RichTextField(verbose_name=u'Text')
     photo = models.ImageField(upload_to='main_article/', blank=True, null=True)
+    photo2 = models.ImageField(upload_to='main_article/', blank=True, null=True)
     tags = TaggableManager()
     created = models.DateTimeField(auto_now_add=True)
     slug = models.SlugField(max_length=250, blank=True)
+
+    def get_next(self):
+        next = SubArticle.objects.filter(id__gt=self.id)
+        if next:
+            return next.first()
 
     def save(self, *args, **kwargs):
         self.slug = slugify(self.title)
@@ -79,7 +86,7 @@ class Writer(models.Model):
 class Slide(models.Model):
     title = models.TextField(blank=True)
     photo = models.ImageField(upload_to='slide/', blank=False)
-    description = RedactorField(verbose_name=u'Text')
+    description = RichTextField(verbose_name=u'Text')
     created = models.DateTimeField(auto_now_add=True)
 
 
@@ -98,9 +105,19 @@ class News(models.Model):
     news_title = models.CharField(max_length=200, blank=True, db_index=True)
     news_data = models.CharField(max_length=200, blank=True)
     news_photo = models.ImageField(upload_to='news/', blank=True)
-    news_body = RedactorField(verbose_name=u'Text')
+    news_body = RichTextField(verbose_name=u'Text')
     news_created = models.DateTimeField(auto_now_add=True)
     slug = models.SlugField(max_length=250, blank=True)
+
+    def get_next(self):
+        next = News.objects.filter(id__gt=self.id)
+        if next:
+            return next.first()
+
+    def get_prev(self):
+        prev = News.objects.filter(id__lt=self.id).order_by('-id')
+        if prev:
+            return prev.first()
 
     def save(self, *args, **kwargs):
         self.slug = slugify(self.news_title)
@@ -129,7 +146,6 @@ class Feedback(models.Model):
     name = models.CharField(max_length=150, blank=True)
     email = models.EmailField(blank=True)
     comment = RedactorField(verbose_name=u'Text')
-
 
 
 class Promo(models.Model):
@@ -162,3 +178,74 @@ class Maqollar(models.Model):
     title = models.CharField(blank=True, max_length=512)
     body = RedactorField(verbose_name=u'Text')
     created = models.DateTimeField(auto_now_add=True)
+
+
+class Tourism(models.Model):
+    photo = models.ImageField(upload_to='tourism/')
+    body = models.TextField()
+    name = models.CharField(max_length=150, blank=True)
+    region = models.ForeignKey(Regions, related_name='tourism')
+    created = models.DateTimeField(auto_now_add=True)
+
+    def get_next(self):
+        next = Tourism.objects.filter(id__gt=self.id)
+        if next:
+            return next.first()
+
+    def get_prev(self):
+        prev = Tourism.objects.filter(id__lt=self.id).order_by('-id')
+        if prev:
+            return prev.first()
+
+    class Meta:
+        ordering = ('-created',)
+
+
+class KechaBugun(models.Model):
+    title = models.CharField(max_length=150)
+    body = RichTextField()
+    photo = models.ImageField(upload_to='kechabugun/')
+    created = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        ordering = ('-created',)
+
+
+class Sanat(models.Model):
+    title = models.CharField(max_length=100)
+    photo1 = models.ImageField(upload_to='sanat/')
+    photo2 = models.ImageField(upload_to='sanat/')
+    description = RichTextField()
+    created = models.DateTimeField(auto_now_add=True)
+
+    def get_next(self):
+        next = Sanat.objects.filter(id__gt=self.id)
+        if next:
+            return next.first()
+
+    def get_prev(self):
+        prev = Sanat.objects.filter(id__lt=self.id).order_by('-id')
+        if prev:
+            return prev.first()
+
+    class Meta:
+        ordering = ('-created',)
+
+
+class Second(models.Model):
+    title = models.CharField(max_length=150)
+    body = RichTextField()
+    photo = models.ImageField(upload_to='second/')
+    created = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        ordering = ('-created',)
+
+
+class First(models.Model):
+    title = models.CharField(max_length=150)
+    body = RichTextField()
+    photo = models.ImageField(upload_to='second/')
+    created = models.DateTimeField(auto_now_add=True)
+    class Meta:
+        ordering = ('-created',)

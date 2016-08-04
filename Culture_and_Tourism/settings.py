@@ -14,6 +14,7 @@ https://docs.djangoproject.com/en/1.8/ref/settings/
 import os
 from django.conf import global_settings
 from django.core.urlresolvers import reverse_lazy
+from django.utils.translation import gettext_lazy as _
 
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -44,10 +45,10 @@ INSTALLED_APPS = (
     'easy_thumbnails',
     'redactor',
     'culture_tourism',
-    'account',
     'social.apps.django_app.default',
     'taggit',
     'treebeard',
+    'ckeditor',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -59,8 +60,7 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'django.middleware.security.SecurityMiddleware',
-    # translation
-    'django.middleware.locale.LocaleMiddleware',
+
 )
 
 ROOT_URLCONF = 'Culture_and_Tourism.urls'
@@ -77,6 +77,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'django.template.context_processors.i18n'
             ],
         },
     },
@@ -98,7 +99,6 @@ DATABASES = {
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.8/topics/i18n/
-
 LANGUAGE_CODE = 'en-us'
 
 TIME_ZONE = 'Asia/Tashkent'
@@ -109,19 +109,6 @@ USE_L10N = True
 
 USE_TZ = True
 
-gettext_noop = lambda s: s
-
-LANGUAGES = (
-    ('en', gettext_noop('English')),
-    ('ru', gettext_noop('Russian')),
-    ('uz', gettext_noop('Uzbek')),
-)
-
-MODELTRANSLATION_DEFAULT_LANGUAGE = 'en'
-
-LOCALE_PATH = (
-    location('locale'),
-)
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.8/howto/static-files/
@@ -140,7 +127,6 @@ EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
 AUTHENTICATION_BACKENDS = (
     'django.contrib.auth.backends.ModelBackend',
-    'account.authentication.EmailAuthBackend',
 )
 
 MEDIA_URL = '/media/'
@@ -163,3 +149,9 @@ REDACTOR_OPTIONS = {'lang': 'en', 'plugins': [
 ]
 }
 REDACTOR_UPLOAD = 'uploads/'
+
+CKEDITOR_CONFIGS = {
+ 'default': {
+ 'toolbar': 'full',
+ },
+}

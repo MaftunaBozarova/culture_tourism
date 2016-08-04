@@ -12,7 +12,6 @@ from django.db.models import Q
 from taggit.models import Tag
 
 
-
 class NewsDetailView(DetailView):
     model = News
     template_name = 'news.html'
@@ -44,10 +43,17 @@ def feedback(request):
 
 def index(request):
     info_last = OtherInfo.objects.last()
-    menus = Menyu.get_root_nodes()
     slides = Slide.objects.all()
+
+    # main_articles = MainArticle.objects.all()[:5]
+
+    first = First.objects.last()
+    second = Second.objects.last()
+    sanat = Sanat.objects.all()[:3]
+    sanata = Sanat.objects.all()[1:2]
+    kechabugun = KechaBugun.objects.all()[:2]
+    tourism = Tourism.objects.all()[:3]
     news = News.objects.all()[:3]
-    main_articles = MainArticle.objects.all()[:5]
 
     if "search_web" in request.POST:
         search_form = SearchForm(data=request.POST)
@@ -58,23 +64,19 @@ def index(request):
             resultsR = Regions.objects.filter(Q(region_name__icontains=search_query) | Q(region_description__icontains=search_query))
             resultsW = Writer.objects.filter(Q(description__icontains=search_query) | Q(name__icontains=search_query))
             return render(request, 'search.html', {'searchN': resultsN, 'searchS': resultsS, 'searchR': resultsR, 'searchW': resultsW})
-    else:
-        search_form = SearchForm()
+
     if "feedback_form" in request.POST:
         feedback_form = FeedBackForm(data=request.POST)
         if feedback_form.is_valid():
             feedback_form.save()
-            #cd = feedback_form.cleaned_data
-            #Feedback.objects.create(name=cd['name'], email=cd['email'],
-                                 #   comment=cd['comment'])
+
     else:
         feedback_form = FeedBackForm()
 
-
-    return render(request, 'index.html', {'search_form': search_form,
-        'info': info_last, 'menus': menus, 'feedback_form': feedback_form,
-        'slides': slides,'all_news': news,
-        'main_articles': main_articles
+    return render(request, 'index.html', {
+        'info': info_last, 'feedback_form': feedback_form,
+        'slides': slides,'all_news': news, 'sanata':sanata,
+        'first':first, 'second': second, 'sanat':sanat, 'kechabugun':kechabugun, 'turism': tourism
     })
 
 
@@ -108,24 +110,20 @@ def maqollar(request):
 
 def menu(request, mmenu):
     general = GeneralInfo.objects.all()
-    general = general.filter(menu_name=mmenu)
+    general = general.filter(menu=mmenu)
 
-    if mmenu == 'ozbek-xalq-maqollari':
-        return redirect('/maqollar')
     last = general.last()
 
     info_last = OtherInfo.objects.last()
-    menus = Menyu.get_root_nodes()
     promo = Promo.objects.last()
     news = News.objects.all()[:3]
     most_visited = MostVisited.objects.all()[:5]
     gallery = Gallery.objects.all()[:9]
-    #clock = timezone.now()
     clock = time.asctime()
     if general.count() < 4:
 
-        return render(request, 'big-text.html', {'content':last, 'second': mmenu,
-                                                 'info': info_last, 'menus': menus, 'related_topics': general,
+        return render(request, 'big-text.html', {'content':last,
+                                                 'info': info_last, 'related_topics': general,
                                                  'all_news': news, 'promo': promo, 'clock': clock,
                                                  'most_visited': most_visited, 'gallery': gallery
                                                  })
@@ -140,7 +138,7 @@ def menu(request, mmenu):
             posts = paginator.page(paginator.num_pages)
 
         return render(request,'small-text.html', {'page': page, 'posts':posts,
-            'info': info_last, 'menus': menus, 'second': mmenu,
+            'info': info_last,
             'all_news': news, 'promo': promo, 'clock': clock,
             'most_visited': most_visited, 'gallery': gallery
         })

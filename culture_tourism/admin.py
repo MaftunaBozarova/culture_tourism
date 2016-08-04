@@ -77,3 +77,28 @@ admin.site.register(MostVisited, MostVisitedAdmin)
 class MaqolAdmin(admin.ModelAdmin):
     list_display = ['title', 'body']
 admin.site.register(Maqollar, MaqolAdmin)
+
+
+class TurismAdmin(admin.ModelAdmin):
+    list_display = ['name', 'region', 'created']
+admin.site.register(Tourism, TurismAdmin)
+
+
+class KechaBugunAdmin(admin.ModelAdmin):
+    list_display = ['title', 'created']
+admin.site.register(KechaBugun, KechaBugunAdmin)
+
+
+class FirstAdmin(admin.ModelAdmin):
+    list_display = ['title', 'created']
+admin.site.register(First, FirstAdmin)
+
+
+class SecondAdmin(admin.ModelAdmin):
+    list_display = ['title', 'created']
+admin.site.register(Second, FirstAdmin)
+
+
+class SanatAdmin(admin.ModelAdmin):
+    list_display = ['title', 'created']
+admin.site.register(Sanat, SanatAdmin)

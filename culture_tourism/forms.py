@@ -16,4 +16,5 @@ class FeedBackForm(forms.ModelForm):
 
 
 class SearchForm(forms.Form):
-    search_query = forms.CharField(label='', max_length=512, required=False, widget=forms.TextInput(attrs={'type': 'search', 'name': 'search-word', 'placeholder': 'Search'}))
+    search_query = forms.CharField(label='', max_length=512, required=False, widget=forms.TextInput(attrs={
+        'type': 'search', 'name': 'search_web', 'placeholder': 'Search'}))

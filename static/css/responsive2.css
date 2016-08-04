@@ -43,7 +43,7 @@
   }
 
   .info .txt-holder .images img {
-    padding: 0;
+    padding: 15px;
     padding-right: 55px;
   }
 
@@ -118,7 +118,7 @@
   }
 
   .align-right {
-    width: 75.7%;
+    width: 77.7%;
   }
 
   #header .navbar-default {
@@ -136,21 +136,26 @@
   .info .tild {
     right: -95px;
     top: 200px;
-    color: blue;
+    color: white;
   }
 
   .info.info-2 .tild {
     left: -100px;
-    color: blue;
+    color: white;
   }
 
+  .info.info-3 .tild {
+    top: 220px;
+    color: white;
+    padding-left: 185px;/*--------*/
+  }
   .info.info-2 .txt-frame .text-box {
     padding: 71px 17px 65px 0;
   }
   /**/
   .info.info-6 .tild {
     left: -100px;
-    color: blue;
+    color: white;
   }
 
   .info.info-6 .txt-frame .text-box {

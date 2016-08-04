@@ -1,42 +1,3 @@
-/*
-Theme Name: UzNation
-Author: UzNation
-Author URI:
-Version: 1
-Description: Base theme for Wordpress
-License: GNU General Public License v2 or later
-License URI: http://www.gnu.org/licenses/gpl-2.0.html
-Text Domain: base
-Tags: one-column, two-columns
-Theme URI:
-*/
-
-/*------------------------------------------------------------------
-
-1. import files
-2. Body
-3. Wrapper / #wrapper
-4. Header / #header
-5. logo / .logo
-6. visual / .visual
-7. Social Networks / .social-networks
-8. Info / .info
-9. Client Area / .client-area
-10. Footer / #footer
-11. Logo Footer / .logo-footer
-12. F1 / .f1
-13. Blockquote / .blockquote
-14. Pagination / .pagination
-15. Sidebar / .sidebar
-16. Article Holder / .article-holder
-17. Masonry Holder / .masonry-holder
-18. Gallery / .gallery
-19. Project Area / .project-area
-20. Map / .map
-21. Loader / .loader
-
--------------------------------------------------------------------*/
-
 .clearfix:after,
 .widget:after,
 .search-form:after,
@@ -188,7 +149,18 @@ Theme URI:
 	display: block;
 	clear: both;
 }
-
+.login
+{
+    width: 80%;
+    padding-left: 155px;
+}
+.hide-for-small
+{
+    font-size: 20px;
+    color: blue;
+    line-height: 30px;
+    font-weight: 300;
+}
 .ellipsis {
 	white-space: nowrap; /* 1 */
 	text-overflow: ellipsis; /* 2 */
@@ -202,7 +174,7 @@ img {
 }
 img.font {
     max-width: 100%;
-    height: 90px;
+    height: 100px;
     width: 100%;
     padding-left: 20px;
     padding-right: 25px;
@@ -1019,7 +991,24 @@ img.aligncenter {
 /*------------------------------------------------------------------
 3. Wrapper / #wrapper
 -------------------------------------------------------------------*/
+.readmore .line
+{
+  color: blue;
+  font-style: bold;
+  margin: -10px;
+}
+.readmore
+{
+  color: #6f6f6f;
+  font-family: monospace;
+}
 
+.readmore .more {
+  color: blue;
+  font-family: monospace;
+  text-decoration: justify;
+  font-size: 18px;
+}
 #wrapper {
 	width: 100%;
 	overflow: hidden;
@@ -1040,9 +1029,9 @@ a:focus {
 -------------------------------------------------------------------*/
 
 #header {
-	padding: 33px 0 17px;
+	padding: 30px 0 0px;
 	background: #fff;
-	margin-top: -100px;
+	margin-top: -110px;
 }
 
 #header.sticky-header.sticky {
@@ -1105,17 +1094,18 @@ a:focus {
 }
 
 .align-right .search-area {
-	float: right;
-	width: 17%;
-	text-align: right;
+    float: right;
+    width: 17%;
+    text-align: center;
+    padding-top: 6px;
 }
 
 .align-right .search-area a {
 	display: inline-block;
 	vertical-align: middle;
-	color: #252525;
-	font-size: 24px;
-	line-height: 24px;
+	color: #fff;
+	font-size: 14px;
+	line-height: 20px;
 	-webkit-transition: all ease .5s;
 	transition: all ease .5s;
 }
@@ -1137,6 +1127,7 @@ a:focus {
 	position: relative;
 	display: inline-block;
 	vertical-align: middle;
+  padding-bottom: 2px;
 }
 
 .align-right .search-box ::-moz-placeholder {
@@ -1151,7 +1142,7 @@ a:focus {
 
 .align-right .search-box input[type="search"] {
 	width: 0;
-	height: 32px;
+	height: 25px;
 	position: absolute;
 	top: 0;
 	right: 100%;
@@ -1165,7 +1156,6 @@ a:focus {
 #header .navbar-default {
 	width: 80%;
 	float: left;
-  margin-left: -60px;
 }
 
 #header .navbar-nav > li > a {
@@ -1203,7 +1193,6 @@ a:focus {
 }
 
 #header .navbar-nav li:last-child .drop {
-	left: auto;
 	right: 100%;
 }
 
@@ -1325,7 +1314,33 @@ a:focus {
 #header .navbar-nav .drop a:hover {
 	background: #f5f5f5;
 }
-
+#calendar2 {
+  width: 100%;
+  font: monospace;
+  line-height: 1.2em;
+  font-size: 15px;
+  text-align: center;
+}
+#calendar2 thead tr:last-child {
+  font-size: small;
+  color: rgb(85, 85, 85);
+}
+#calendar2 thead tr:nth-child(1) td:nth-child(2) {
+  color: rgb(50, 50, 50);
+}
+#calendar2 thead tr:nth-child(1) td:nth-child(1):hover, #calendar2 thead tr:nth-child(1) td:nth-child(3):hover {
+  cursor: pointer;
+}
+#calendar2 tbody td {
+  color: rgb(44, 86, 122);
+}
+#calendar2 tbody td:nth-child(n+6), #calendar2 .holiday {
+  color: rgb(231, 140, 92);
+}
+#calendar2 tbody td.today {
+  background: rgb(220, 0, 0);
+  color: #fff;
+}
 .dropdown-menu {
 	opacity: 0;
 	display: block;
@@ -1399,9 +1414,9 @@ a:focus {
 
 .visual .slide.slick-active .box {
 	opacity: 1;
-	-ms-transform: rotate(0deg) translateX(0); /* IE 9 */
-	-webkit-transform: rotate(0deg) translateX(0); /* Safari */
-	transform: rotate(0deg) translateX(0);
+	-ms-transform: rotate(0) translateX(0); /* IE 9 */
+	-webkit-transform: rotate(0) translateX(0); /* Safari */
+	transform: rotate(0) translateX(0);
 	-webkit-transition: all .8s ease 1s;
 	transition: all .8s ease 1s;
 }
@@ -1635,51 +1650,89 @@ a:focus {
 .info:first-child .txt-frame {
 	padding: 0 0 0 4.1%;
 }
-
-.info.team .txt-frame .text-box {
+/**/
+.info.info-2 .txt-frame .text-box {
 	padding: 71px 42px 117px 0;
 }
 
-.info.team .img-frame {
+.info.info-2 .img-frame {
 	width: 54.8%;
 	vertical-align: top;
 }
 
-.info.team .img-frame:after {
+.info.info-2 .img-frame:after {
 	width: 58.8%;
 }
 
-.info.team .img-frame .image {
+.info.info-2 .img-frame .image {
 	width: 58.8%;
 }
 
-.info.team .img-frame .image img {
+.info.info-2 .img-frame .image img {
 	-webkit-transition: all ease .5s;
 	transition: all ease .5s;
 	display: inline-block;
 	vertical-align: top;
 }
 
-.info.team .img-frame .image a {
+.info.info-2 .img-frame .image a {
 	text-decoration: none;
 }
 
-.info.team .img-frame .image a:hover img {
+.info.info-2 .img-frame .image a:hover img {
 	opacity: 1;
 	box-shadow: 0 0 30px rgba(0, 0, 0, .4);
 }
 
-.info.team .num {
-	padding: 14px 0 0 116px;
-}
-
-.info.team .tild {
+.info.info-2 .tild {
 	left: -40px;
 	right: auto;
 	top: 239px;
+}/*-------=*/
+.info.info-6 .txt-frame .text-box {
+  padding: 71px 42px 117px 0;
 }
 
-.info.work .txt-frame {
+.info.info-6 .img-frame {
+  width: 54.8%;
+  vertical-align: top;
+}
+
+.info.info-6 .img-frame:after {
+  width: 58.8%;
+}
+
+.info.info-6 .img-frame .image {
+  width: 58.8%;
+}
+
+.info.info-6 .img-frame .image img {
+  -webkit-transition: all ease .5s;
+  transition: all ease .5s;
+  display: inline-block;
+  vertical-align: top;
+}
+
+.info.info-6 .img-frame .image a {
+  text-decoration: none;
+}
+
+.info.info-6 .img-frame .image a:hover img {
+  opacity: 1;
+  box-shadow: 0 0 30px rgba(0, 0, 0, .4);
+}
+
+.info.info-6 .num {
+  padding: 14px 0 0 116px;
+}
+
+.info.info-6 .tild {
+  left: -40px;
+  right: auto;
+  top: 239px;
+}/*-----*/
+
+.info.info-3 .txt-frame {
 	vertical-align: top;
 	position: relative;
 	z-index: 1;
@@ -1687,40 +1740,40 @@ a:focus {
 	padding: 4.8% 0 0;
 }
 
-.info.work .txt-frame:after {
+.info.info-3 .txt-frame:after {
 	position: absolute;
 	left: 0;
 	top: 0;
 	bottom: 0;
 	width: 100%;
 	content: "";
-	background: #252525;
+	background: url(../images/fon7.jpg);
 	z-index: -1;
 }
 
-.info.work .num {
+.info.info-3 .num {
 	padding: 12px 79px 0 93px;
 }
 
-.info.work .tild {
+.info.info-3 .tild {
 	margin: 28px -159px 0 0;
 	right: 50%;
 }
 
-.info.work .img-frame {
+.info.info-3 .img-frame {
 	width: 68%;
 }
 
-.info.work .img-frame:after {
+.info.info-3 .img-frame:after {
 	display: none;
 }
 
-.info.work .more {
+.info.info-3 .more {
 	right: auto;
 	left: 100px;
 }
 
-.info.work .img-area {
+.info.info-3 .img-area {
 	-webkit-transition: all ease .4s;
 	transition: all ease .4s;
 }
@@ -1746,15 +1799,15 @@ a:focus {
 	right: 50px;
 }
 
-.info.testimonial .img-frame {
+.info.info-5 .img-frame {
 	width: 72%;
 }
 
-.info.testimonial .img-frame:after {
+.info.info-5 .img-frame:after {
 	display: none;
 }
 
-.info.testimonial .txt-frame {
+.info.info-5 .txt-frame {
 	position: relative;
 	vertical-align: top;
 	padding: 4.7% 0 0;
@@ -1762,41 +1815,41 @@ a:focus {
 	width: 28.2%;
 }
 
-.info.testimonial .txt-frame:after {
-	position: absolute;
-	left: 0;
-	top: 0;
-	bottom: 0;
-	width: 113.7%;
-	content: "";
-	background: #252525;
-	z-index: -1;
+.info.info-5 .txt-frame:after {
+    position: absolute;
+    left: 0;
+    top: 125px;
+    bottom: 20px;
+    width: 113.7%;
+    content: "";
+    background: url(../images/fon7.jpg);
+    z-index: -1;
 }
 
-.info.testimonial .num {
+.info.info-5 .num {
 	padding: 12px 92px 0 92px;
 }
 
-.info.testimonial .tild {
+.info.info-5 .tild {
 	right: 27px;
 	top: 291px;
 }
 
-.info.testimonial .more {
+.info.info-5 .more {
 	left: 100px;
 	right: auto;
 }
 
-.info.blogs .img-frame {
+.info.info-4 .img-frame {
 	width: 67.8%;
 	padding: 0 0 25px;
 }
 
-.info.blogs .img-frame:after {
+.info.info-4 .img-frame:after {
 	display: none;
 }
 
-.info.blogs .txt-frame {
+.info.info-4 .txt-frame {
 	vertical-align: top;
 	padding: 4.7% 0 0;
 	width: 32.5%;
@@ -1805,22 +1858,22 @@ a:focus {
 	text-align: right;
 }
 
-.info.blogs .txt-frame:after {
+.info.info-4 .txt-frame:after {
 	position: absolute;
-	left: 0;
+	left: 10px;
 	top: 0;
 	bottom: 0;
 	width: 100%;
 	content: "";
-	background: #252525;
+	background: url(../images/fon7.jpg);
 	z-index: -1;
 }
 
-.info.blogs .num {
+.info.info-4 .num {
 	padding: 12px 78px 0 43px;
 }
 
-.info.blogs .tild {
+.info.info-4 .tild {
 	right: 102px;
 	top: 239px;
 }
@@ -2049,6 +2102,7 @@ a:focus {
 	font-size: 16px;
 	margin: 0 0 28px;
 	text-transform: none;
+    text-align: justify;
 }
 
 .info .txt-holder .continue {
@@ -2087,7 +2141,7 @@ a:focus {
 }
 
 .info .slider .slide {
-	background: #fff;
+	background: white;
 	padding: 0 99px 80px;
 	box-shadow: 0 14px 54px rgba(0, 0, 0, .22);
 }
@@ -2109,6 +2163,7 @@ a:focus {
 	margin: 0 0 31px;
 	position: relative;
 	z-index: 1;
+  color: #707070;
 }
 .download
 {
@@ -2136,12 +2191,13 @@ a:focus {
 }
 
 .info .slider blockquote .designation {
-	display: block;
-	text-transform: uppercase;
-	color: #b7b7b7;
-	letter-spacing: 2.9px;
-	font-size: 14px;
-	line-height: 16px;
+	  display: block;
+    text-transform: uppercase;
+    color: #e5e5e5;
+    letter-spacing: 1.9px;
+    font-size: 14px;
+    line-height: 16px;
+    float: left;
 }
 
 .info .slider .images {
@@ -2262,14 +2318,12 @@ a:focus {
 	white-space: nowrap;
   color: rgba(255, 255, 255, 0.1);
 }
-
-.info .num {
-	vertical-align: top;
-	font-size: 72px;
-	line-height: 72px;
-	padding: 12px 129px 0 43px;
-	letter-spacing: 12px;
-  color: aliceblue;
+#comment
+{
+  margin: 0px -0.0625px 0px 0px;
+  width: 352px;
+  height: 174px; 
+  position: static;
 }
 
 .info .more {
@@ -2281,7 +2335,7 @@ a:focus {
 	font-size: 14px;
 	line-height: 16px;
 	color: #fff;
-	text-decoration: none;
+	text-decoration: none;  
 	text-transform: uppercase;
 	padding: 14px 20px 12px;
 	-webkit-transition: all ease .5s;
@@ -2323,14 +2377,14 @@ a:focus {
 }
 
 .info .img-frame:after {
-	position: absolute;
-	left: 0;
-	top: 0;
-	bottom: 0;
-	width: 55.5%;
-	content: "";
-	background: #252525;
-	z-index: -1;
+    position: absolute;
+    left: 0;
+    top: 15px;
+    bottom: 20px;
+    width: 55.5%;
+    content: "";
+    background: url(../images/fon7.jpg);
+    z-index: -1;
 }
 
 .info .img-frame .text,
@@ -2408,7 +2462,7 @@ a:focus {
 	font-weight: 700;
 	margin: 0 0 22px;
 	color: #1061DB;
-  font-style: italic;
+  font-style: bold;
 	font-size: 36px;
 	line-height: 36px;
 }
@@ -2462,17 +2516,17 @@ a:focus {
 }
 
 .info .txt-frame .text-box h2 {
-	margin: 0 0 17px;
-	font-weight: 300;
-	font-size: 36px;
-	line-height: 38px;
+    margin: 0 0 17px;
+    font-weight: 300;
+    font-size: 36px;
+    line-height: 38px;
 }
 
 .info .txt-frame .text-box h2 a {
-	text-decoration: none;
-	color: #252525;
-	-webkit-transition: all ease .5s;
-	transition: all ease .5s;
+    text-decoration: none;
+    color: #252525;
+    -webkit-transition: all ease .5s;
+    transition: all ease .5s;
 }
 
 .info .txt-frame .social-networks li {
@@ -2882,8 +2936,8 @@ a:focus {
 .f1 .testimonial {
 	float: right;
 	width: 43.1%;
-	font-size: 14px;
-	line-height: 26px;
+	font-size: 12px;
+	line-height: 23px;
 }
 
 .f1 .testimonial li {
@@ -3116,7 +3170,7 @@ a:focus {
 	top: 8px;
 	height: 1px;
 	content: "";
-	width: 1000%;
+	width: 100%;
 }
 
 .promo h2:before {
@@ -3566,7 +3620,14 @@ a:focus {
 	color: #252525;
 	letter-spacing: 2.3px;
 }
+a.button {
+  -webkit-appearance: button;
+    -moz-appearance: button;
+    appearance: button;
 
+    text-decoration: none;
+    color: initial;
+  }
 /*------------------------------------------------------------------
 13. Pagination / .pagination
 -------------------------------------------------------------------*/
@@ -3617,10 +3678,37 @@ a:focus {
 
 .sidebar .widget {
 	margin: 0;
+  margin-bottom: 5px;
 }
 
 .sidebar .widget.add h2 {
 	padding-bottom: 28px;
+}
+.main-footer .contact-widget {
+    position: relative;
+}
+.main-footer .footer-widget {
+    position: relative;
+    margin-bottom: 40px;
+    z-index: 5;
+    width: 100%;
+}
+.main-footer .footer-widget .widget-title {
+    position: relative;
+    margin-bottom: 30px;
+    width: 100%;
+}
+.main-footer .contact-widget button {
+    background: #ef173c none repeat scroll 0 0;
+    bottom: 0;
+    color: #ffffff;
+    font-size: 13px;
+    line-height: 22px;
+    padding: 8px 30px;
+    right: 15px;
+    margin-top: 5px;
+    text-transform: uppercase;
+    width: 100%;
 }
 
 .sidebar .widget h2 {
@@ -5284,13 +5372,6 @@ float: right;
 #style-changer .twine a {
 	background: #c59d5f;
 }
-#comment
-{
-  margin: 0px -0.0625px 0px 0 px;
-  width: 352px;
-  height: 174px;
-  position: static;
-}
 
 #style-changer .ucla-gold a {
 	background: #ffb600;
@@ -5302,6 +5383,17 @@ float: right;
 
 #style-changer .yellow a {
 	background: #f39c12;
+}
+/*---------EXTRA-----------*/
+.border {
+ background-color: rgba(0, 204, 250, 0.49);/*rgba(0, 171, 253, 0.45)*/
+ padding: 3px 0px;
+}
+
+p.name {
+  font-size: 15px;
+  font-weight: 500;
+  font-family: cursive;
 }
 
 @media (min-width: 768px) {
@@ -5331,8 +5423,8 @@ float: right;
 
 @-webkit-keyframes ball-clip-rotate-pulse-rotate {
 	0% {
-		-webkit-transform: translate(-50%, -50%) rotate(0deg);
-		transform: translate(-50%, -50%) rotate(0deg);
+		-webkit-transform: translate(-50%, -50%) rotate(0);
+		transform: translate(-50%, -50%) rotate(0);
 	}
 
 	50% {
@@ -5348,8 +5440,8 @@ float: right;
 
 @keyframes ball-clip-rotate-pulse-rotate {
 	0% {
-		-webkit-transform: translate(-50%, -50%) rotate(0deg);
-		transform: translate(-50%, -50%) rotate(0deg);
+		-webkit-transform: translate(-50%, -50%) rotate(0);
+		transform: translate(-50%, -50%) rotate(0);
 	}
 
 	50% {

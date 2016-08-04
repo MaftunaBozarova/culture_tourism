@@ -16,7 +16,7 @@
                     </a>
                     <ul class="dropdown-menu">
                         {% for sub in m.sub_menu.all %}
-                            <li><a href="{% url 'uznation:menu' m_menu=m.name|slugify submenu=sub.name|slugify %}">{{ sub.name }}</a></li>
+                            <li><a href="{% url 'uznation:menu' pk=sub.pk %}">{{ sub.name }}</a></li>
                         {% endfor %}
                     </ul>
                 </li>

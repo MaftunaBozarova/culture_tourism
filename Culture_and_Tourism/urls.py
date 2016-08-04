@@ -17,22 +17,15 @@ from django.conf.urls import include, url
 from django.contrib import admin
 from django.conf import settings
 from django.conf.urls.static import static
-from django.conf.urls.i18n import i18n_patterns
-from django.views.generic import RedirectView
+
 
 urlpatterns = [
-    #url(r'^i18n/', include('django.conf.urls.i18n')),
+    url(r'^rosetta/', include('rosetta.urls')),
+    url(r'^i18n/', include('django.conf.urls.i18n')),
     url(r'^admin/', include(admin.site.urls)),
-    #url(r'^$', RedirectView.as_view(url='/uz')),
     url(r'^redactor/', include('redactor.urls')),
     url(r'', include('culture_tourism.urls', namespace='uznation')),
-    url(r'^profile/', include('account.urls', namespace='profile')),
 ]
-
-urlpatterns += i18n_patterns('',
-
-                             #url(r'', include('culture_tourism.urls', namespace='uznation')),
-                             )
 
 
 if settings.DEBUG:

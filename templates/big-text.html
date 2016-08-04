@@ -15,31 +15,13 @@
                     </a>
                     <ul class="dropdown-menu">
                         {% for sub in m.get_children %}
-                            <li><a href="{% url 'uznation:menu' mmenu=m.name|slugify %}">{{ sub.name }}</a></li>
+                            <li><a href="{% url 'uznation:menu' pk=sub.pk %}">{{ sub.name }}</a></li>
                         {% endfor %}
                     </ul>
                 </li>
         {% endfor %}
     </ul>
 </div><!-- /.navbar-collapse -->
-{% endblock %}
-
-{% block search %}
-<div class="search-box">
-<form method="post" action="." name="search">
-    <a class="search" href="#"><i class="icon-search"><span>search</span></i></a>
-    {% csrf_token %}
-    {{ search_form.as_p }}
-    <input type="submit" value="Search" name="search_web">
-</form>
-    <div class="btn-group">
-        <ul>
-        <li><a href="/en" class="btn btn-primary btn-sm">EN</a></li>
-        <li><a href="/ru" class="btn btn-primary btn-sm">RU</a></li>
-        <li><a href="/uz" class="btn btn-primary btn-sm">UZ</a></li>
-        </ul>
-    </div>
-</div>
 {% endblock %}
 
 {% block promo-photo %}
