@@ -1,4 +1,5 @@
 from django.db import models
+from django.core.urlresolvers import reverse
 from django.utils.text import slugify
 from redactor.fields import RedactorField
 from django.utils.translation import ugettext as _
@@ -8,16 +9,21 @@ from ckeditor.fields import RichTextField
 
 
 class Menyu(MP_Node):
-    name = models.CharField(max_length=100, verbose_name=_('Menu:'), unique=True)
-    url = models.URLField(verbose_name=_('Url:'), blank=True, null=True)
+    name = models.CharField(max_length=100, unique=True)
+    url = models.CharField(max_length=255, blank=True)
     date = models.DateField(auto_now_add=True)
 
     def __str__(self):
         return self.name
 
     class Meta:
-        verbose_name_plural = _('Menus')
-        verbose_name = _('Menu')
+        verbose_name_plural = 'Menus'
+        verbose_name = 'Menu'
+
+    def get_url(self):
+        if self.url and not 'http' in self.url:
+            return reverse(self.url)
+        return self.url
 
 
 class SubArticle(models.Model):
@@ -63,19 +69,19 @@ class MainArticle(models.Model):
 
 
 class Regions(models.Model):
-    region_name = models.CharField(max_length=70)
-    region_photo = models.ImageField(upload_to='regions/', blank=True)
-    region_description = RedactorField(verbose_name=u'Text')
+    title = models.CharField(max_length=70)
+    photo = models.ImageField(upload_to='regions/', blank=True)
+    body = RedactorField(verbose_name=u'Text')
 
     def __str__(self):
-        return self.region_name
+        return self.title
 
 
 class Writer(models.Model):
     PERIOD = (
         ('first', _('till 12 century')),
-        ('second', _('from 12 to 18 century')),
-        ('third', _('from 18 century till now'))
+        ('second', _('from 12th to 18th century')),
+        ('third', _('from 18th century till now'))
     )
     name = models.CharField(max_length=200)
     photo = models.ImageField(upload_to='writers/', blank=True)
@@ -92,20 +98,18 @@ class Slide(models.Model):
 
 class OtherInfo(models.Model):
     description = RedactorField(verbose_name=u'Text')
+    promo_photo = models.ImageField()
     address = models.CharField(max_length=255, blank=True)
     phone_1 = models.CharField(max_length=17, blank=True)
     phone_2 = models.CharField(max_length=17, blank=True)
     email = models.EmailField(blank=True)
     website = models.URLField(blank=True)
-    site_logo = models.ImageField(blank=True)
-    logo_footer = models.ImageField(blank=True)
 
 
 class News(models.Model):
     news_title = models.CharField(max_length=200, blank=True, db_index=True)
-    news_data = models.CharField(max_length=200, blank=True)
     news_photo = models.ImageField(upload_to='news/', blank=True)
-    news_body = RichTextField(verbose_name=u'Text')
+    news_body = RichTextField(verbose_name=u'News')
     news_created = models.DateTimeField(auto_now_add=True)
     slug = models.SlugField(max_length=250, blank=True)
 
@@ -122,16 +126,19 @@ class News(models.Model):
     def save(self, *args, **kwargs):
         self.slug = slugify(self.news_title)
         super(News, self).save(*args, **kwargs)
-    
+
     class Meta:
-        ordering = ('-news_created', )
+        ordering = ('-news_created',)
 
 
 class Gallery(models.Model):
-    category = models.CharField(max_length=50, blank=True)
+    category = models.ForeignKey(Menyu, related_name='gallery')
     photo = models.ImageField(upload_to='gallery/')
-    description = RedactorField(verbose_name=u'Text')
+    description = RedactorField(verbose_name=u'Description')
     created = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        ordering = ['-created']
 
 
 class Library(models.Model):
@@ -141,20 +148,18 @@ class Library(models.Model):
     lib_description = RedactorField(verbose_name=u'Text')
     lib_created = models.DateTimeField(auto_now_add=True, blank=True)
 
+    @property
+    def get_url(self):
+        return self.lib_file.url
+
+    class Meta:
+        ordering = ['-lib_created']
+
 
 class Feedback(models.Model):
     name = models.CharField(max_length=150, blank=True)
     email = models.EmailField(blank=True)
     comment = RedactorField(verbose_name=u'Text')
-
-
-class Promo(models.Model):
-    promo_photo = models.ImageField(upload_to='promo/', blank=True)
-    promo_text = RedactorField(verbose_name=u'Text')
-    promo_created = models.DateTimeField(auto_now_add=True)
-
-    class Meta:
-        ordering = ('promo_created',)
 
 
 class MostVisited(models.Model):
@@ -167,7 +172,7 @@ class MostVisited(models.Model):
 
     def save(self, *args, **kwargs):
         self.n_slug = slugify(self.title)
-        self.r_slug = slugify(self.region.region_name)
+        self.r_slug = slugify(self.region.title)
         super(MostVisited, self).save(*args, **kwargs)
 
     def __str__(self):
@@ -176,76 +181,17 @@ class MostVisited(models.Model):
 
 class Maqollar(models.Model):
     title = models.CharField(blank=True, max_length=512)
-    body = RedactorField(verbose_name=u'Text')
+    body = RedactorField(verbose_name=u'Maqol')
     created = models.DateTimeField(auto_now_add=True)
 
-
-class Tourism(models.Model):
-    photo = models.ImageField(upload_to='tourism/')
-    body = models.TextField()
-    name = models.CharField(max_length=150, blank=True)
-    region = models.ForeignKey(Regions, related_name='tourism')
-    created = models.DateTimeField(auto_now_add=True)
-
-    def get_next(self):
-        next = Tourism.objects.filter(id__gt=self.id)
-        if next:
-            return next.first()
-
-    def get_prev(self):
-        prev = Tourism.objects.filter(id__lt=self.id).order_by('-id')
-        if prev:
-            return prev.first()
+    def __str__(self):
+        return self.title
 
     class Meta:
-        ordering = ('-created',)
+        ordering = ['-created']
 
 
-class KechaBugun(models.Model):
-    title = models.CharField(max_length=150)
-    body = RichTextField()
-    photo = models.ImageField(upload_to='kechabugun/')
-    created = models.DateTimeField(auto_now_add=True)
-
-    class Meta:
-        ordering = ('-created',)
-
-
-class Sanat(models.Model):
-    title = models.CharField(max_length=100)
-    photo1 = models.ImageField(upload_to='sanat/')
-    photo2 = models.ImageField(upload_to='sanat/')
-    description = RichTextField()
-    created = models.DateTimeField(auto_now_add=True)
-
-    def get_next(self):
-        next = Sanat.objects.filter(id__gt=self.id)
-        if next:
-            return next.first()
-
-    def get_prev(self):
-        prev = Sanat.objects.filter(id__lt=self.id).order_by('-id')
-        if prev:
-            return prev.first()
-
-    class Meta:
-        ordering = ('-created',)
-
-
-class Second(models.Model):
-    title = models.CharField(max_length=150)
-    body = RichTextField()
-    photo = models.ImageField(upload_to='second/')
-    created = models.DateTimeField(auto_now_add=True)
-
-    class Meta:
-        ordering = ('-created',)
-
-
-class First(models.Model):
-    title = models.CharField(max_length=150)
-    body = RichTextField()
-    photo = models.ImageField(upload_to='second/')
-    created = models.DateTimeField(auto_now_add=True)
-    class Meta:
-        ordering = ('-created',)
+class Tale(models.Model):
+    tale = models.ForeignKey(SubArticle, related_name='tales', blank=True, null=True)
+    file = models.FileField(blank=True, upload_to='tales/')
+    author = models.CharField(max_length=100, blank=True)

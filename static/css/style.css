@@ -1831,9 +1831,10 @@ a:focus {
 }
 
 .info.info-5 .tild {
-	right: 27px;
-	top: 291px;
-}
+    right: 0;
+    top: 300px;
+    margin: 25px 100px 0 0;
+}/*NEW*/
 
 .info.info-5 .more {
 	left: 100px;
@@ -1874,9 +1875,9 @@ a:focus {
 }
 
 .info.info-4 .tild {
-	right: 102px;
-	top: 239px;
-}
+  right: 45px;
+  top: 275px;
+}/*NEW*/
 
 .info.price {
 	padding: 21px 0 0;
@@ -2060,7 +2061,7 @@ a:focus {
 }
 
 .info .txt-holder.right .images img {
-	padding: 0 0 10px 60px;
+	padding: 0 0 0 95px;/*NEW*/
 }
 
 .info .txt-holder .images {
@@ -2102,7 +2103,6 @@ a:focus {
 	font-size: 16px;
 	margin: 0 0 28px;
 	text-transform: none;
-    text-align: justify;
 }
 
 .info .txt-holder .continue {
@@ -2173,6 +2173,8 @@ a:focus {
 	position: absolute;
 	left: 3px;
 	top: -14px;
+  font-family: "fontello";
+  content: "\e808";
 	color: #eee;
 	z-index: -1;
 	font-size: 58px;
@@ -2193,11 +2195,10 @@ a:focus {
 .info .slider blockquote .designation {
 	  display: block;
     text-transform: uppercase;
-    color: #e5e5e5;
-    letter-spacing: 1.9px;
+    color: #b7b7b7;/*NEW*/
+    letter-spacing: 2.9px;/*NEW*/
     font-size: 14px;
     line-height: 16px;
-    float: left;
 }
 
 .info .slider .images {
@@ -2316,7 +2317,7 @@ a:focus {
 	letter-spacing: 24px;
 	font-weight: 700;
 	white-space: nowrap;
-  color: rgba(255, 255, 255, 0.1);
+  color: #ffffff;/*NEW*/
 }
 #comment
 {
@@ -2427,7 +2428,7 @@ a:focus {
 }
 
 .info .img-frame h3 {
-	margin: 0 0 12px;
+	margin: 0 0 12px;/* NEW */
 	color: #fff;
 	font-weight: 300;
 	font-size: 36px;
@@ -5396,6 +5397,11 @@ p.name {
   font-family: cursive;
 }
 
+#tild1{
+ margin: 45px 0 0 0;
+ padding-right: 30px;
+}/*NEW*/
+
 @media (min-width: 768px) {
 	.commentlist-item .commentlist-item {
 		padding: 0 0 0 2em;
@@ -5484,4 +5490,3 @@ p.name {
 		transform: translate(-50%, -50%) scale(.15);
 	}
 }
-

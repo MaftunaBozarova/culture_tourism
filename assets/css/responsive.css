@@ -43,8 +43,7 @@
   }
 
   .info .txt-holder .images img {
-    padding: 15px;
-    padding-right: 55px;
+    padding: 30px 68px 0 0;/*NEW*/
   }
 
   .info .slider .pagination {
@@ -68,11 +67,12 @@
   }/**/
 
   .info.info-3 .tild {
-    margin: 28px -165px 0 0;
+    margin: 20px -50px 0 0;/*NEW*/
   }
 
   .info.info-4 .tild {
     right: 65px;
+    margin: 80px -80px 0px 0;/*NEW*/
   }
 
   .info.price .tild {
@@ -134,8 +134,7 @@
   }
 
   .info .tild {
-    right: -95px;
-    top: 200px;
+    right: -104px;
     color: white;
   }
 
@@ -144,11 +143,11 @@
     color: white;
   }
 
-  .info.info-3 .tild {
+  /*.info.info-3 .tild {
     top: 220px;
     color: white;
-    padding-left: 185px;/*--------*/
-  }
+    padding-left: 185px;--------
+  }*//*NEW*/
   .info.info-2 .txt-frame .text-box {
     padding: 71px 17px 65px 0;
   }
@@ -166,7 +165,7 @@
   }
 
   .info.info-3 .tild {
-    right: 50%;
+    right: 40%;/*NEW*/
   }
 
   .info .filter {
@@ -184,7 +183,7 @@
   }
 
   .info.info-5 .tild {
-    right: 60px;
+    right: -25px;/*NEW*/
   }
 
   .info.info-5 .num {
@@ -208,7 +207,7 @@
   }
 
   .info.info-4 .tild {
-    right: 60px;
+    right: 70px;/*NEW*/
   }
 
   .info .txt-holder .images img {
@@ -455,7 +454,7 @@
   }
 
   .info.info-3 .tild {
-    margin: 28px -170px 0 0;
+    margin: 28px -60px 0 0;
   }
 
   .info.service-area .tild {
@@ -468,8 +467,8 @@
   }
 
   .info.info-4 .tild {
-    left: 50px;
-    top: 340px;
+    left: 30px;
+    top: 234px;/* NEW */
   }
 
   .info.price .tild {
@@ -579,7 +578,7 @@
     line-height: 22px;
   }
   .info .txt-frame p {
-    margin: 0 0 20px;
+    margin: 6 12px 20px;/*NEW*/
   }
   .info .txt-frame h3 {
     font-size: 30px;
@@ -736,7 +735,7 @@
     padding: 40px 7px 60px 0;
   }
   .info.info-6 .txt-frame .text-box {
-    padding: 40px 7px 60px 0;
+    padding: 40px 7px 60px;/*NEW*/
   }/**/
 
   .info.info-3 .tild {
@@ -2112,7 +2111,7 @@
   }
 
   .info .txt-holder .txt-box p {
-    margin: 0 0 18px;
+    margin: 4px 10px 18px;/*NEW*/
   }
 
   .info.info-2 .txt-frame .text-box {

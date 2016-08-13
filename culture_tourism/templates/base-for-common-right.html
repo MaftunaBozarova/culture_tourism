@@ -1,8 +1,7 @@
-<!DOCTYPE html>
 {% load staticfiles %}
-{% load i18n %}
-{% load thumbnail %}
+{% load i18n thumbnail %}
 {% load tree_tags %}
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -25,12 +24,19 @@
     <link rel="stylesheet" href="{% static 'css/responsive.css' %}">
     <!-- include the site color stylesheet -->
     <link rel="stylesheet" href="{% static 'css/color/color.css' %}">
-    <link rel="shortcut icon" href="{% static 'Lagan.png' %}">
 
+    <link rel="shortcut icon" href="{% static 'Lagan.png' %}">
 </head>
 
 <body>
 {% news as all_news %}
+{% clock as clock %}
+{% most_visited as most_visited %}
+{% all_tags as all_tags %}
+{% random_num as random %}
+{% other_info as info %}
+
+
 <!-- Page Loader -->
 <div id="pre-loader" class="loader-container">
     <div class="loader">
@@ -38,6 +44,7 @@
         <div></div>
     </div>
 </div>
+
 <!-- main container of all the page elements -->
 <div id="wrapper">
     <!-- header of the page -->
@@ -104,6 +111,7 @@
                                 {% endfor %}
                             </ul>
                         </div>
+
                     </div>
                 </nav>
                 <div class="search-area">
@@ -111,7 +119,7 @@
                     <form class="search-box" method="post" action="{% url 'uznation:search' %}" name="search">
                         {% csrf_token %}
                         {{ search_form.non_field_errors }}
-                        <button class="btn btn-primary btn-xs" style="padding-bottom: 1px" href="#" type="submit"
+                        <button class="btn btn-primary btn-xs" style="padding-bottom: 1px" type="submit"
                                 name="search_web"><i class="icon-search"><span></span></i></button>
                         {{ search_form.search_query.errors }}
                         {{ search_form.search_query }}
@@ -126,17 +134,160 @@
         </div>
     </header>
 
-    {% block main %}
-        {% block slideshows %}
-        {% endblock %}
 
-        {% block info-holder %}
+    <div class="promo portfolio">
+        <div class="max-container">
+            <div class="img">
+                <img src="{{ info.promo_photo|thumbnail_url:'promo' }}" class="font">
+            </div>
+            <div class="holder">
+                <div class="frame">
+                </div>
+            </div>
+        </div>
+    </div>
+    <main id="main">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-9 col-sm-8 col-xs-12 content">
+                    {% block main-row-div-1 %}{% endblock %}
+                </div>
 
-        {% endblock %}
+                <div class="col-lg-3 col-sm-4 col-xs-12 sidebar">
+                    <div class="widget wow fadeInUp" data-wow-delay="0.6s">
+                        <h2>{% trans 'MOST VISITED PLACES' %}</h2>
+                        <ul class="categories">
+                            {% for visited in most_visited %}
+                                <li>
+                                    <a href="{% url 'uznation:most_visited' pk=visited.pk %}">{{ visited }}</a>
+                                </li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                    <div class="widget wow fadeInUp" data-wow-delay="0.6s">
+                        <h2>{% trans 'PICTURES' %}</h2>
+                        {% block pics %}
 
-    {% endblock %}
+                        {% endblock %}
+                    </div>
+                    <div class="widget wow fadeInUp" data-wow-delay="0.6s">
+                        <h2>{% trans 'Calendar' %}</h2>
+                        <div class="right_blok">
+                            <table id="calendar2">
+                                <thead>
+                                <tr>
+                                    <td>«</td>
+                                    <td colspan="5" data-month="5" data-year="2016"></td>
+                                    <td>»
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>{% trans 'Mo' %}</td>
+                                    <td>{% trans 'Tu' %}</td>
+                                    <td>{% trans 'We' %}</td>
+                                    <td>{% trans 'Th' %}</td>
+                                    <td>{% trans 'Fr' %}</td>
+                                    <td>{% trans 'Sa' %}</td>
+                                    <td>{% trans 'Su' %}</td>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td></td>
+                                    <td></td>
+                                    <td>1</td>
+                                    <td>2</td>
+                                    <td>3</td>
+                                    <td>4</td>
+                                    <td>5</td>
+                                </tr>
+                                <tr>
+                                    <td>6</td>
+                                    <td>7</td>
+                                    <td>8</td>
+                                    <td>9</td>
+                                    <td>10</td>
+                                    <td>11</td>
+                                    <td>12</td>
+                                </tr>
+                                <tr>
+                                    <td>13</td>
+                                    <td>14</td>
+                                    <td>15</td>
+                                    <td>16</td>
+                                    <td>17</td>
+                                    <td>18</td>
+                                    <td>19</td>
+                                </tr>
+                                <tr>
+                                    <td>20</td>
+                                    <td>21</td>
+                                    <td>22</td>
+                                    <td>23</td>
+                                    <td>24</td>
+                                    <td>25</td>
+                                    <td>26</td>
+                                </tr>
+                                <tr>
+                                    <td>27</td>
+                                    <td class="today">28</td>
+                                    <td>29</td>
+                                    <td>30</td>
+                                    <td>&nbsp;</td>
+                                    <td>&nbsp;</td>
+                                    <td>&nbsp;</td>
+                                </tr>
+                                <tr>
+                                    <td>&nbsp;</td>
+                                    <td>&nbsp;</td>
+                                    <td>&nbsp;</td>
+                                    <td>&nbsp;</td>
+                                    <td>&nbsp;</td>
+                                    <td>&nbsp;</td>
+                                    <td>&nbsp;</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="widget add wow fadeInUp" data-wow-delay="0.6s">
+                        <h2>{% trans 'TAGS' %}</h2>
+                        {% for tag in all_tags %}
+                            {#                            TODO: make random numbers#}
+                            <a href="#" style="font-size:{{ random }}px;">{{ tag }}</a>
+                        {% endfor %}
+                    </div>
+                    <div class="widget wow fadeInUp" data-wow-delay="0.6s">
+                        <h2>{% trans 'LAST NEWS' %}</h2>
+                        <ul class="recent">
+                            {% for news in all_news %}
+                                <li>
+                                    <div class="img">
+                                        <a href="{% url 'uznation:news' pk=news.pk %}"><img
+                                                src="{{ news.news_photo.url }}" alt="{{ news.news_title }}"></a>
+                                    </div>
+                                    <div class="txt">
+                                        <h3><a href="{% url 'uznation:news' pk=news.pk %}">{{ news.news_title }}</a>
+                                        </h3>
+                                        <time datetime="2016-01-02 16:00">{{ news.news_created }}</time>
+                                    </div>
+                                </li>
+                            {% endfor %}
 
-    {% other_info as info %}
+                        </ul>
+                    </div>
+                    <div class="widget wow fadeInUp" data-wow-delay="0.6s"
+                         style="visibility: visible; animation-delay: 0.6s; animation-name: fadeInUp;">
+                        <h2>{% trans 'TIME IN UZBEKISTAN' %}</h2>
+                        <div class="tags">
+                            <h2>{{ clock|date:'H : i' }}</h2>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
     <footer id="footer">
         <div class="max-container">
             <div class="f1">
@@ -146,7 +297,7 @@
                             <i class="icon">UzNation</i>
                         </a>
                     </strong>
-
+                    <!-- footer-txt -->
                     <div class="footer-txt">
                         <div class="text">
                             <p>
@@ -177,7 +328,6 @@
                                     <p><a href="{% url 'uznation:news' pk=news.pk %}"><i
                                             class="glyphicon glyphicon-check"></i><span>{{ news.news_title|safe }}</span></a>
                                     </p>
-{#                                    TODO: Need more space between date and time#}
                                     <span>{{ news.news_created|date:'d.m.Y' }} {{ news.news_created|date:'H:i' }}</span>
                                 </li>
                             {% endfor %}
@@ -224,6 +374,7 @@
                 </div>
             </div>
             <div class="f2">
+                <!-- sub-nav -->
                 <ul class="sub-nav">
                     {% for m in menu %}
 
@@ -237,26 +388,14 @@
 
         </div>
     </footer>
-    <span id="back-top" class="fa fa-arrow-up"></span>
 </div>
+
+<span id="back-top" class="fa fa-arrow-up"></span>
 
 <script src="{% static 'js/jquery-1.11.3.min.js' %}"></script>
 <script type="text/javascript" src="{% static 'js/plugins.js' %}"></script>
 <script type="text/javascript" src="{% static 'js/functions.js' %}"></script>
 <script type="text/javascript">
-    jQuery(document).ready(function () {
-
-        // main-slider init
-        jQuery('#main-slider').slick({
-            adaptiveHeight: true,
-            autoplay: true,
-            arrows: false,
-            speed: 800,
-            dots: true,
-            fade: true
-        });
-
-    });
     if (navigator.userAgent.match(/IEMobile\/10\.0/)) {
         var msViewportStyle = document.createElement('style')
         msViewportStyle.appendChild(
@@ -266,33 +405,48 @@
         )
         document.querySelector('head').appendChild(msViewportStyle)
     }
-    $(document).ready(function () {
-        var item = $('.slid_img .slid_img_inner');
-        var Children = item.children();
-        item.width(Children.size() * 303);
-    });
-    $('.slider_right').live('click', function (e) {
-        var target_item = $('.slid_img');
-        var targetScroll = target_item.scrollLeft();
-        target_item.animate({
-            scrollLeft: targetScroll + 303
-        }, 500);
-        e.preventDefault();
-    });
-    $('.slider_left').live('click', function (e) {
-        var target_item = $('.slid_img');
-        var targetScroll = target_item.scrollLeft();
-        target_item.animate({
-            scrollLeft: targetScroll - 303
-        }, 500);
-        e.preventDefault();
-    });
-
-    $(window).load(function () {
-        $('#slider').nivoSlider({
-            directionNav: false
-        });
-    });
+    function Calendar2(id, year, month) {
+        var Dlast = new Date(year, month + 1, 0).getDate(),
+                D = new Date(year, month, Dlast),
+                DNlast = new Date(D.getFullYear(), D.getMonth(), Dlast).getDay(),
+                DNfirst = new Date(D.getFullYear(), D.getMonth(), 1).getDay(),
+                calendar = '<tr>',
+                month = ["{% trans 'January' %}", "{% trans 'February' %}", "{% trans 'March' %}",
+                    "{% trans 'April' %}", "{% trans 'May' %}", "{% trans 'June' %}",
+                    "{% trans 'July' %}", "{% trans 'August' %}", "{% trans 'September' %}",
+                    "{% trans 'October' %}", "{% trans 'November' %}", "{% trans 'December' %}"];
+        if (DNfirst != 0) {
+            for (var i = 1; i < DNfirst; i++) calendar += '<td>';
+        } else {
+            for (var i = 0; i < 6; i++) calendar += '<td>';
+        }
+        for (var i = 1; i <= Dlast; i++) {
+            if (i == new Date().getDate() && D.getFullYear() == new Date().getFullYear() && D.getMonth() == new Date().getMonth()) {
+                calendar += '<td class="today">' + i;
+            } else {
+                calendar += '<td>' + i;
+            }
+            if (new Date(D.getFullYear(), D.getMonth(), i).getDay() == 0) {
+                calendar += '<tr>';
+            }
+        }
+        for (var i = DNlast; i < 7; i++) calendar += '<td>&nbsp;';
+        document.querySelector('#' + id + ' tbody').innerHTML = calendar;
+        document.querySelector('#' + id + ' thead td:nth-child(2)').innerHTML = month[D.getMonth()] + ' ' + D.getFullYear();
+        document.querySelector('#' + id + ' thead td:nth-child(2)').dataset.month = D.getMonth();
+        document.querySelector('#' + id + ' thead td:nth-child(2)').dataset.year = D.getFullYear();
+        if (document.querySelectorAll('#' + id + ' tbody tr').length < 6) {  // С‡С‚РѕР±С‹ РїСЂРё РїРµСЂРµР»РёСЃС‚С‹РІР°РЅРёРё РјРµСЃСЏС†РµРІ РЅРµ "РїРѕРґРїСЂС‹РіРёРІР°Р»Р°" РІСЃСЏ СЃС‚СЂР°РЅРёС†Р°, РґРѕР±Р°РІР»СЏРµС‚СЃСЏ СЂСЏРґ РїСѓСЃС‚С‹С… РєР»РµС‚РѕРє. РС‚РѕРі: РІСЃРµРіРґР° 6 СЃС‚СЂРѕРє РґР»СЏ С†РёС„СЂ
+            document.querySelector('#' + id + ' tbody').innerHTML += '<tr><td>&nbsp;<td>&nbsp;<td>&nbsp;<td>&nbsp;<td>&nbsp;<td>&nbsp;<td>&nbsp;';
+        }
+    }
+    Calendar2("calendar2", new Date().getFullYear(), new Date().getMonth());
+    // РїРµСЂРµРєР»СЋС‡Р°С‚РµР»СЊ РјРёРЅСѓСЃ РјРµСЃСЏС†
+    document.querySelector('#calendar2 thead tr:nth-child(1) td:nth-child(1)').onclick = function () {
+        Calendar2("calendar2", document.querySelector('#calendar2 thead td:nth-child(2)').dataset.year, parseFloat(document.querySelector('#calendar2 thead td:nth-child(2)').dataset.month) - 1);
+    }
+    document.querySelector('#calendar2 thead tr:nth-child(1) td:nth-child(3)').onclick = function () {
+        Calendar2("calendar2", document.querySelector('#calendar2 thead td:nth-child(2)').dataset.year, parseFloat(document.querySelector('#calendar2 thead td:nth-child(2)').dataset.month) + 1);
+    }
 </script>
 
 </body>

@@ -14,8 +14,7 @@ https://docs.djangoproject.com/en/1.8/ref/settings/
 import os
 from django.conf import global_settings
 from django.core.urlresolvers import reverse_lazy
-from django.utils.translation import gettext_lazy as _
-
+import django.conf.locale
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 location = lambda x: os.path.join(BASE_DIR, x)
@@ -31,7 +30,6 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
-
 # Application definition
 
 INSTALLED_APPS = (
@@ -45,14 +43,16 @@ INSTALLED_APPS = (
     'easy_thumbnails',
     'redactor',
     'culture_tourism',
-    'social.apps.django_app.default',
     'taggit',
     'treebeard',
     'ckeditor',
+
 )
 
 MIDDLEWARE_CLASSES = (
     'django.contrib.sessions.middleware.SessionMiddleware',
+    # translation
+    'django.middleware.locale.LocaleMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -68,23 +68,23 @@ ROOT_URLCONF = 'Culture_and_Tourism.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [location('templates')]
-        ,
+        'DIRS': [location('templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
                 'django.template.context_processors.debug',
                 'django.template.context_processors.request',
+
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
-                'django.template.context_processors.i18n'
+                'django.core.context_processors.i18n',
             ],
+            'debug': DEBUG,
         },
     },
 ]
 
 WSGI_APPLICATION = 'Culture_and_Tourism.wsgi.application'
-
 
 # Database
 # https://docs.djangoproject.com/en/1.8/ref/settings/#databases
@@ -92,13 +92,13 @@ WSGI_APPLICATION = 'Culture_and_Tourism.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': location('Uznation'),
+        'NAME': location('db.UzNation'),
     }
 }
 
-
 # Internationalization
 # https://docs.djangoproject.com/en/1.8/topics/i18n/
+
 LANGUAGE_CODE = 'en-us'
 
 TIME_ZONE = 'Asia/Tashkent'
@@ -109,6 +109,29 @@ USE_L10N = True
 
 USE_TZ = True
 
+gettext_noop = lambda s: s
+
+LANGUAGES = (
+    ('en', gettext_noop('English')),
+    ('ru', gettext_noop('Russian')),
+    ('uz', gettext_noop('Uzbek')),
+)
+
+EXTRA_LANG_INFO = {
+    'uz': {
+        'bidi': False,
+        'code': 'uz',
+        'name': 'Uzbek',
+        'name_local': "O'zbekcha",  # unicode codepoints here
+    },
+}
+django.conf.locale.LANG_INFO.update(EXTRA_LANG_INFO)
+
+MODELTRANSLATION_DEFAULT_LANGUAGE = 'en'
+
+LOCALE_PATHS = (
+    location('locale'),
+)
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.8/howto/static-files/
@@ -119,26 +142,24 @@ STATICFILES_DIRS = (
     location('assets'),
 )
 
-LOGIN_REDIRECT_URL = reverse_lazy('dashboard')
-LOGIN_URL = reverse_lazy('login')
-LOGOUT_URL = reverse_lazy('logout')
-
-EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
-
-AUTHENTICATION_BACKENDS = (
-    'django.contrib.auth.backends.ModelBackend',
-)
-
 MEDIA_URL = '/media/'
 MEDIA_ROOT = location('media/')
 
-
 THUMBNAIL_ALIASES = {
     '': {
-        'site_logo': {'size': (200, 200), 'crop': True},
-        'logo_footer': {'size': (100, 29), 'crop': True},
-        'slide': {'size': (389, 260), 'crop': True},
-        'promo': {'size': (1280, 90), 'crop': True},
+        'logo_footer': {'size': (100, 29), 'crop': 'scale'},
+        'slide': {'size': (701, 469), 'crop': 'scale'},
+        'promo': {'size': (1280, 100), 'crop': 'scale'},
+        'main_article': {'size': (400, 550), 'crop': 'scale'},
+        'kechabugun': {'size': (506, 345), 'crop': 'scale'},
+        'turism': {'size': (382, 502), 'crop': 'scale'},
+        'news_index': {'size': (400, 550), 'crop': 'scale'},
+        'big_text_content': {'size': (870, 500), 'crop': 'scale'},
+        'related': {'size': (260, 185), 'crop': 'scale'},
+        'sanat_small': {'size': (289, 217), 'crop': True},
+        'rassom_big': {'size': (579, 216), 'crop': 'scale'},
+        'kulo_big': {'size': (289, 432), 'crop': 'scale'},
+        'zargar_big': {'size': (579, 217), 'crop': 'scale'},
 
     }
 }
@@ -147,11 +168,11 @@ REDACTOR_OPTIONS = {'lang': 'en', 'plugins': [
     'clips', 'textexpander', 'filemanager', 'fullscreen',
     'imagemanager', 'properties', 'source', 'table', 'video'
 ]
-}
+                    }
 REDACTOR_UPLOAD = 'uploads/'
 
 CKEDITOR_CONFIGS = {
- 'default': {
- 'toolbar': 'full',
- },
+    'default': {
+        'toolbar': 'full',
+    },
 }

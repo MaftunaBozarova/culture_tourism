@@ -1,40 +1,58 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
-{% for result in searchN %}
-    {{ result.news_title }}
-    {{ result.news_body|safe }}
-    <p>------------------------------------------------------------</p>
-    {% empty %}
-    <p>Nothing matched</p>
-{% endfor %}
-{% for result in searchS %}
-{{ result.title }}
-    <br>
-    {{ result.body|safe }}
-        <p>------------------------------------------------------------</p>
-{% empty %}
-    <p>Nothing matched</p>
-{% endfor %}
+{% extends 'base-for-common.html' %}
+{% load i18n %}
+{% block title %}Uznation{% endblock %}
 
-{% for result in searchR %}
-{{ result.region_name }}
-    {{ result.region_description|safe }}
-    {% empty %}
-    <p>Nothing matched</p>
-{% endfor %}
+{% block main-row-div-1 %}
+    <div class="col-lg-9 col-sm-8 col-xs-12 col-lg-push-3 col-sm-push-4 content">
+        <!-- gallery -->
+        <div class="readmore">
 
-{% for result in searchW %}
-{{ result.name }}
-    {{ result.description|safe }}
-    {% empty %}
-    <p>Nothing matched</p>
-{% endfor %}
+            <h2>You searched for {{ search_query }}</h2>
 
+            {% for result in searchS %}
+                <div class="widget wow fadeInUp">
+                    <h2 class="line">___</h2>
+                    <h2>{{ result.title }}</h2>
+                    <p>{{ result.body|truncatechars:800|safe }}</p>
+                    <a href="{% url 'uznation:small' pk=result.pk %}" class="more">>>{% trans 'READ MORE' %}</a>
+                </div>
+            {% endfor %}
+            {% for result in searchW %}
+                <div class="widget wow fadeInUp">
+                    <h2 class="line">___</h2>
+                    <h2>{{ result.title }}</h2>
+                    <p>{{ result.body|truncatechars:800|safe }}</p>
+                    <a href="{% url 'uznation:small' pk=result.pk %}" class="more">>>{% trans 'READ MORE' %}</a>
+                </div>
+            {% endfor %}
+            {% for result in searchR %}
+                <div class="widget wow fadeInUp">
+                    <h2 class="line">___</h2>
+                    <h2>{{ result.title }}</h2>
+                    <p>{{ result.body|truncatechars:800|safe }}</p>
+                    <a href="{% url 'uznation:small' pk=result.pk %}" class="more">>>{% trans 'READ MORE' %}</a>
+                </div>
+            {% endfor %}
+            {% for result in searchN %}
+                <div class="widget wow fadeInUp">
+                    <h2 class="line">___</h2>
+                    <h2>{{ result.title }}</h2>
+                    <p>{{ result.body|truncatechars:800|safe }}</p>
+                    <a href="{% url 'uznation:small' pk=result.pk %}" class="more">>>{% trans 'READ MORE' %}</a>
+                </div>
+            {% endfor %}
+        {% if searchS.count == 0 and searchR.count == 0 and searchN.count == 0 and searchW.count == 0 %}
+        <h3>No Results Sorry !!!</h3>
+        {% endif %}
+        </div>
+    </div>
+{% endblock %}
 
-</body>
-</html>
+{% block pics %}
+<ul class="instagram">
+        {% for pic in gallery %}
+            <li><a href="#"><img src="{{ pic.photo.url }}" alt="{{ pic.description|safe }}"
+                                 style="width:83px; height:83px;"></a></li>
+        {% endfor %}
+    </ul>
+{% endblock %}

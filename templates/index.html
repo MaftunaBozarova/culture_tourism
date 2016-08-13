@@ -1,376 +1,370 @@
 {% extends 'base.html' %}
 {% load thumbnail %}
-{% load tree_tags %}
+{% load i18n %}
 {% block title %}UzNation{% endblock %}
-
-{% block site-logo %}{{ info.site_logo|thumbnail_url:'site_logo' }}" {% endblock %}
-
 {% block main %}
     <main id="main">
-    {% block slideshows %}
-        <div class="visual">
-            <div class="max-container">
-                <div class="slideshow" id="main-slider">
-                    {% for slide in slides.all %}
-                        <div class="slide">
-                            <div class="caption">
-                                <div class="text">
-                                    <p>{{ slide.description|safe }}</p>
+        <!-- visual -->
+        {% block slideshows %}
+            <div class="visual">
+                <div class="max-container">
+                    <div class="slideshow" id="main-slider">
+                        {% for slide in slides.all %}
+                            <div class="slide">
+                                <div class="caption">
+                                    <div class="text">
+                                        <p>{{ slide.description|safe }}</p>
+                                    </div>
                                 </div>
+                                <div class="image">
+                                    <img src="{{ slide.photo|thumbnail_url:'slide' }}" alt="{{ slide.title }}">
+                                </div>
+                                <span class="box"></span>
                             </div>
-                            <div class="image">
-                                <img src="{{ slide.photo|thumbnail_url:'slide' }}" alt="{{ slide.title }}">
-                            </div>
-                            <span class="box"></span>
-                        </div>
-                    {% endfor %}
+                        {% endfor %}
+                    </div>
                 </div>
             </div>
-        </div>
-    {% endblock %}
-    <div class="max-container">
-        <div class="info-holder">
-           {% block info-holder %}
-            <!-- mustaqillikka 25-yil -->
-					<div class="info info-1">
-						<div class="img-frame wow fadeInLeft" data-wow-delay="0.6s">
-							<div class="text">
-								<span class="num">25</span>
-								<h2 class="tild">MUSTAQILLIK</h2>
-								<div class="box">
-										<h3>O'zbekiston Kelajagi Buyuk Davlat</h3>
-								</div>
-							</div>
-							<div class="image wow fadeInRight" data-wow-delay="0.6s"><img src="{{ first.photo.url }}" alt="image description" style="width:400px; height:550px; "></div>
-						</div>
-						<div class="txt-frame wow fadeInUp" data-wow-delay="0.6s">
-							<h3 style="color:blue">{{ first.title }}</h3>
-							<p>{{ first.body|truncatechars:500|safe }}</p>
-						</div>
-					</div>
-					<!-- mustaqillik -->
-					<div class="info info-2">
-						<div class="txt-frame wow fadeInUp" data-wow-delay="0.6s">
-						<p align="center" style="color:blue;font-size:18px;">{{ second.title }}</p>
-                            <p>{{ second.body|safe }}</p>
-						</div>
-						<div class="img-frame">
-							<div class="image wow fadeInRight" data-wow-delay="0.6s">
-								<img src="{{ second.photo.url }}" alt="image description" class="img" style="width:400px; height:550px;">
-							</div>
-							<div class="text wow fadeInRight" data-wow-delay="0.3s">
-								<h2 class="tild">2 0 1 6-yil</h2>
-								<div class="box">
-									<div class="box-inner">
-										<h3>Sog'lom Ona va Bola Yili</h3>
-									</div>
-							        <br/>
-									<br/>
-									<br/>
-								</div>
-								<a href="2016.html" class="more">batafsil</a>
-							</div>
-						</div>
-					</div>
-					<!-- work info -->
-					<div class="info info-3">
-						<div class="txt-frame wow fadeInLeft" data-wow-delay="0.6s">
-						    <h2 class="tild">SAN'AT</h2>
-							<!-- <span class="num">O'ZBEK  SAN'ATI</span>	-->
-							<ul class="filter">
-								<li class="active"><a href="#">Barcha<br/>San'at<br/>Galleriyasi<br/><br/></a></li>
-                                <li><a href="#" data-filter=".work-b">Kulolchilik<br/>San'ati<br/><br/></a></li>
-								<li><a href="#" data-filter=".work-w">Rassomlik<br/>San'ati<br/><br/></a></li>
-								<li><a href="#" data-filter=".work-m">Zargarlik<br/>San'ati<br/><br/></a></li>
-							</ul>
-							<br/>
-							<br/>
-							<a href="sanat.html" class="more">batafsil</a>
-						</div>
-						<div class="img-frame">
-							<div class="img-area" id="masonry-container">
-								<div class="item work-w wow fadeInUp" data-wow-delay="0.6s" style="position: absolute; left: 289px; top: 0px; visibility: visible; animation-delay: 0.6s; animation-name: fadeInUp;">
-									<img src="{{ sanata.last.photo1.url }}" alt="image description" style="height:217px" >
-									<div class="caption">
-										<div class="c1">
-											<div class="c2">
-												<strong class="title">{{ sanata.last.title }}</strong>
-												<p>{{ sanata.last.description|truncatechars:15|safe }}</p>
-												<ul class="icons">
-													<li><a href="{{ sanata.last.photo1.url }}" class="lightbox"><i class="icon-resize-full-alt"></i> <span>resize</span></a></li>
-													<li><a href="#"><i class="icon-attach"></i> <span>attach</span></a></li>
-												</ul>
-											</div>
-										</div>
-									</div>
-								</div>
-								<div class="item work-m wow fadeInUp" data-wow-delay="0.6s">
-									<img src="{{ sanat.last.photo1.url }}" alt="image description" style="height:217px;">
-									<div class="caption">
-										<div class="c1">
-											<div class="c2">
-												<strong class="title">{{ sanat.last.title }}</strong>
-												<p>{{ sanat.last.description|truncatechars:15|safe }}</p>
-												<ul class="icons">
-													<li><a href="{{ sanat.last.photo1.url }}" class="lightbox"><i class="icon-resize-full-alt"></i> <span>resize</span></a></li>
-													<li><a href="#"><i class="icon-attach"></i> <span>attach</span></a></li>
-												</ul>
-											</div>
-										</div>
-									</div>
-								</div>
-								<div class="item work-b wow fadeInUp" data-wow-delay="0.6s">
-									<img src="{{ sanat.first.photo1.url }}" alt="image description" style="height:432px">
-									<div class="caption">
-										<div class="c1">
-											<div class="c2">
-												<strong class="title">{{ sanat.first.title }}</strong>
-												<p>{{ sanat.first.description|truncatechars:15|safe }}</p>
-												<ul class="icons">
-													<li><a href="{{ sanat.first.photo2.url }}" class="lightbox"><i class="icon-resize-full-alt"></i> <span>resize</span></a></li>
-													<li><a href="#"><i class="icon-attach"></i> <span>attach</span></a></li>
-												</ul>
-								            </div>
-										</div>
-									</div>
-								</div>
-								<div class="item add work-w wow fadeInUp" data-wow-delay="0.6s">
-									<img src="{{ sanata.last.photo2.url }}" alt="image description" style="width:579px; height:217px; ">
-									<div class="caption">
-										<div class="c1">
-											<div class="c2">
-												<strong class="title">{{ sanata.last.title }}</strong>
-												<p>{{ sanata.last.description|truncatechars:15|safe }}</p>
-												<ul class="icons">
-													<li><a href="{{ sanata.last.photo2.url }}" class="lightbox"><i class="icon-resize-full-alt"></i> <span>resize</span></a></li>
-													<li><a href="#"><i class="icon-attach"></i> <span>attach</span></a></li>
-												</ul>
-											</div>
-										</div>
-									</div>
-								</div>
-								<div class="item work-b wow fadeInUp" data-wow-delay="0.6s">
-									<img src="{{ sanat.first.photo2.url }}" alt="image description" style="height:265px;">
-									<div class="caption">
-										<div class="c1">
-											<div class="c2">
-												<strong class="title">{{ sanat.first.title }}</strong>
-												<p>{{ sanat.first.description|truncatechars:15|safe }}</p>
-												<ul class="icons">
-													<li><a href="{{ sanat.first.photo2.url }}" class="lightbox"><i class="icon-resize-full-alt"></i> <span>resize</span></a></li>
-													<li><a href="#"><i class="icon-attach"></i> <span>attach</span></a></li>
-												</ul>
-											</div>
-										</div>
-									</div>
-								</div>
-								<div class="item add work-m wow fadeInUp" data-wow-delay="0.6s">
-									<img src="{{ sanat.last.photo2.url }}" alt="image description" style="width:579px; height:217px;">
-									<div class="caption">
-										<div class="c1">
-											<div class="c2">
-												<strong class="title">{{ sanat.last.title }}</strong>
-												<p>{{ sanat.last.description|truncatechars:15|safe }}</p>
-												<ul class="icons">
-													<li><a href="{{ sanat.lst.photo2.url }}" class="lightbox"><i class="icon-resize-full-alt"></i> <span>resize</span></a></li>
-													<li><a href="#"><i class="icon-attach"></i> <span>attach</span></a></li>
-												</ul>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-					<!-- blogs info -->
-					<div class="info info-4">
-						<div class="img-frame">
-							<div class="txt-holder wow fadeInUp" data-wow-delay="0.6s">
-								<div class="images">
-									<img src="{{ kechabugun.first.photo.url }}" alt="image description" style="height:345px">
-								</div>
-								<div class="txts">
-									<div class="txt-box">
-										<h3>{{ kechabugun.first.title }}</h3>
-										<p>{{ kechabugun.first.body|truncatechars:300|safe }}</p>
-										<a href="kechabugun.html" class="continue"><span>DAVOMI</span> <i class="icon-right-thin"></i></a><!-- 1991-yildanoldingi holatlar, SSSR haqida link-->
-									</div>
-								</div>
-							</div>
-							<div class="txt-holder right wow fadeInUp" data-wow-delay="0.6s">
-								<div class="txts">
-									<div class="txt-box">
-										<h3>{{ kechabugun.last.title }}</h3>
-										<p>{{ kechabugun.last.body|truncatechars:300|safe }}</p>
-										<a href="kechabugun.html" class="continue"><span>DAVOMI</span> <i class="icon-right-thin"></i></a>
-									</div>
-								</div>
-								<div class="images">
-									<img src="{{ kechabugun.last.photo.url }}" alt="image description">
-								</div>
-							</div>
-						</div>
-						<div class="txt-frame wow fadeInRight" data-wow-delay="0.6s">
-							<h2 class="tild">Kecha va Bugun</h2>
-							<!--<span class="num">06</span> -->
-							<a href="kechabugun.html" class="more">batafsil</a>
-						</div>
-					</div>
-					<!-- testimonial info -->
-					<div class="info info-5">
-						<div class="txt-frame wow fadeInLeft" data-wow-delay="0.6s">
-							<h2 class="tild">Turizm</h2>
-							<!-- <span class="num">05</span> -->
-							<a href="turizm.html" class="more">batafsil</a>
-						</div>
-						<div class="img-frame wow fadeInUp" data-wow-delay="0.6s">
-							<div class="slider">
-								<div class="mask">
-                                    {% for t in turism %}
-                                    <div class="slide">
-										<blockquote>
-											<q>{{ t.body|truncatechars:350|safe }}<br/><br/></q>
-											<footer>
-												<span class="heading4">{{ t.name }}</span>
-												<span class="designation">{{ t.region }}</span>
-											</footer>
-										</blockquote>
-										<div class="images">
-											<img src="{{ t.photo.url }}" alt="image description" style="height:502px">
-										</div>
-									</div>
-                                    {% endfor %}
-								</div>
-								<div class="pagination">
-									<ul class="mask-inner">
-                                        {% for t in turism %}
-                                        <li>
-											<a href="#"><img src="{{ t.photo.url }}" alt="image description" style="height:164px"></a>
-										</li>
-                                        {% endfor %}
-									</ul>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="info info-6">
-						<div class="txt-frame wow fadeInUp" data-wow-delay="0.6s">
+        {% endblock %}
+        <div class="max-container">
+            <!-- info holder -->
+            <div class="info-holder">
+                {% block info-holder %}
+                    {% for article in main_articles %}
+                        {% if forloop.counter == 1 %}
+                            <div class="info info-1">
+                                <div class="img-frame wow fadeInLeft" data-wow-delay="0.6s">
+                                    <div class="text">
+                                        <span class="num">25</span>
+                                        <h2 class="tild">{{ article.b_tild }}</h2>
+                                        <div class="box">
+                                            <h3>{{ article.b_box }}</h3>
+                                        </div>
+                                    </div>
+                                    <div class="image wow fadeInRight" data-wow-delay="0.6s">
+                                        <img src="{{ article.subarticle.last.photo|thumbnail_url:'main_article' }}"
+                                             alt="image description">
+                                    </div>
+                                </div>
+                                <div class="txt-frame wow fadeInUp" data-wow-delay="0.6s">
+                                    <h3 style="color:blue">{{ article.subarticle.last.title }}</h3>
+                                    <p>{{ article.subarticle.last.body|truncatechars:1158|safe }}</p>
+                                </div>
+                            </div>
+                        {% endif %}
+                        {% if forloop.counter == 2 %}
+                            <div class="info info-2">
+                                <div class="txt-frame wow fadeInUp" data-wow-delay="0.6s">
+                                    <p align="center"
+                                       style="color:blue;font-size:30px; font-weight: 700;">{{ article.subarticle.last.title }}</p>
+                                    <p>{{ article.subarticle.last.body|safe }}</p>
+                                </div>
+                                <div class="img-frame">
+                                    <div class="image wow fadeInRight" data-wow-delay="0.6s">
+                                        <img src="{{ article.subarticle.last.photo|thumbnail_url:'main_article' }}"
+                                             alt="image description" class="img">
+                                    </div>
+                                    <div class="text wow fadeInRight" data-wow-delay="0.3s">
+                                        <h2 class="tild">{{ article.b_tild }}</h2>
+                                        <div class="box">
+                                            <div class="box-inner">
+                                                <h3>{{ article.b_box }}</h3>
+                                            </div>
+                                            <br/>
+                                            <br/>
+                                            <br/>
+                                        </div>
+                                        <a href="{% url 'uznation:mainarticle' pk=article.pk %}"
+                                           class="more">{% trans 'MORE' %}</a>
+                                    </div>
+                                </div>
+                            </div>
+                        {% endif %}
+                        {% if forloop.counter == 3 %}
+                            <div class="info info-3">
+                                <div class="txt-frame wow fadeInLeft" data-wow-delay="0.6s">
+                                    <h2 class="tild">{{ article.b_tild }}</h2>
+                                    <!-- <span class="num">O'ZBEK  SAN'ATI</span>	-->
+                                    <ul class="filter">
+                                        <li class="active"><a href="#">Barcha<br/>San'at<br/>Galleriyasi<br/><br/></a>
+                                        </li>
+                                        <li><a href="#" data-filter=".work-b">{{ article.subarticle.last.title }}<br/>San'ati<br/><br/></a>
+                                        </li>
+                                        <li><a href="#"
+                                               data-filter=".work-w">{{ article.subarticle.first.get_next.title }}<br/>San'ati<br/><br/></a>
+                                        </li>
+                                        <li><a href="#" data-filter=".work-m">{{ article.subarticle.first.title }}<br/>San'ati<br/><br/></a>
+                                        </li>
+                                    </ul>
+                                    <br/>
+                                    <br/>
+                                    <a href="{% url 'uznation:mainarticle' pk=article.pk %}" class="more">{% trans 'MORE' %}</a>
+                                </div>
+                                <div class="img-frame">
+                                    <div class="img-area" id="masonry-container">
+                                        <div class="item work-w wow fadeInUp" data-wow-delay="0.6s"
+                                             style="position: absolute; left: 289px; top: 0px; visibility: visible; animation-delay: 0.6s; animation-name: fadeInUp;">
+                                            <img src="{{ article.subarticle.first.get_next.photo.url }}"
+                                                 alt="image description">
+                                            <div class="caption">
+                                                <div class="c1">
+                                                    <div class="c2">
+                                                        <strong class="title">{{ article.subarticle.first.get_next.title }}</strong>
+                                                        <p>{{ article.subarticle.first.get_next.body|truncatechars:30|safe }}</p>
+                                                        <ul class="icons">
+                                                            <li>
+                                                                <a href="{{ article.subarticle.first.get_next.photo|thumbnail_url:'sanat_small' }}"
+                                                                   class="lightbox"><i class="icon-resize-full-alt"></i>
+                                                                    <span>resize</span></a></li>
+                                                            <li>
+                                                                <a href="{% url 'uznation:small' pk=article.subarticle.first.get_next.pk %}"><i
+                                                                        class="icon-attach"></i> <span>attach</span></a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="item work-m wow fadeInUp" data-wow-delay="0.6s">
+                                            <img src="{{ article.subarticle.first.photo.url }}" alt="image description">
+                                            <div class="caption">
+                                                <div class="c1">
+                                                    <div class="c2">
+                                                        <strong class="title">{{ article.subarticle.first.title }}</strong>
+                                                        <p>{{ article.subarticle.first.body|truncatechars:30|safe }}</p>
+                                                        <ul class="icons">
+                                                            <li>
+                                                                <a href="{{ article.subarticle.first.photo|thumbnail_url:'sanat_samll' }}"
+                                                                   class="lightbox"><i class="icon-resize-full-alt"></i>
+                                                                    <span>resize</span></a></li>
+                                                            <li>
+                                                                <a href="{% url 'uznation:small' pk=article.subarticle.first.pk %}"><i
+                                                                        class="icon-attach"></i> <span>attach</span></a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="item work-b wow fadeInUp" data-wow-delay="0.6s">
+                                            <img src="{{ article.subarticle.last.photo.url }}" alt="image description">
+                                            <div class="caption">
+                                                <div class="c1">
+                                                    <div class="c2">
+                                                        <strong class="title">{{ article.subarticle.last.title }}</strong>
+                                                        <p>{{ article.subarticle.last.body|truncatechars:30|safe }}</p>
+                                                        <ul class="icons">
+                                                            <li>
+                                                                <a href="{{ article.subarticle.last.photo|thumbnail_url:'sanat_small' }}"
+                                                                   class="lightbox"><i class="icon-resize-full-alt"></i>
+                                                                    <span>resize</span></a></li>
+                                                            <li>
+                                                                <a href="{% url 'uznation:small' pk=article.subarticle.last.pk %}"><i
+                                                                        class="icon-attach"></i> <span>attach</span></a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="item add work-w wow fadeInUp" data-wow-delay="0.6s">
+                                            <img src="{{ article.subarticle.first.get_next.photo2.url }}"
+                                                 alt="image description">
+                                            <div class="caption">
+                                                <div class="c1">
+                                                    <div class="c2">
+                                                        <strong class="title">{{ article.subarticle.first.get_next.title }}</strong>
+                                                        <p>{{ article.subarticle.first.get_next.body|truncatechars:30|safe }}</p>
+                                                        <ul class="icons">
+                                                            <li>
+                                                                <a href="{{ article.subarticle.first.get_next.photo2|thumbnail_url:'rassom_big' }}"
+                                                                   class="lightbox"><i class="icon-resize-full-alt"></i>
+                                                                    <span>resize</span></a></li>
+                                                            <li>
+                                                                <a href="{% url 'uznation:small' pk=article.subarticle.first.get_next.pk %}"><i
+                                                                        class="icon-attach"></i> <span>attach</span></a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="item work-b wow fadeInUp" data-wow-delay="0.6s">
+                                            <img src="{{ article.subarticle.last.photo2.url }}" alt="image description">
+                                            <div class="caption">
+                                                <div class="c1">
+                                                    <div class="c2">
+                                                        <strong class="title">{{ article.subarticle.last.title }}</strong>
+                                                        <p>{{ article.subarticle.last.body|truncatechars:30|safe }}</p>
+                                                        <ul class="icons">
+                                                            <li>
+                                                                <a href="{{ article.subarticle.last.photo2|thumbnail_url:'kulol_big' }}"
+                                                                   class="lightbox"><i class="icon-resize-full-alt"></i>
+                                                                    <span>resize</span></a></li>
+                                                            <li>
+                                                                <a href="{% url 'uznation:small' pk=article.subarticle.last.pk %}"><i
+                                                                        class="icon-attach"></i> <span>attach</span></a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="item add work-m wow fadeInUp" data-wow-delay="0.6s">
+                                            <img src="{{ article.subarticle.first.photo2.url }}"
+                                                 alt="image description">
+                                            <div class="caption">
+                                                <div class="c1">
+                                                    <div class="c2">
+                                                        <strong class="title">{{ article.subarticle.first.title }}</strong>
+                                                        <p>{{ article.subarticle.first.body|truncatechars:30|safe }}</p>
+                                                        <ul class="icons">
+                                                            <li>
+                                                                <a href="{{ article.subarticle.first.photo2|thumbnail_url:'zargar_big' }}"
+                                                                   class="lightbox"><i class="icon-resize-full-alt"></i>
+                                                                    <span>resize</span></a></li>
+                                                            <li>
+                                                                <a href="{% url 'uznation:small' pk=article.subarticle.first.pk %}"><i
+                                                                        class="icon-attach"></i> <span>attach</span></a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        {% endif %}
+                        {% if forloop.counter == 4 %}
+                            <div class="info info-4">
+                                <div class="img-frame">
+                                    <div class="txt-holder wow fadeInUp" data-wow-delay="0.6s">
+                                        <div class="images">
+                                            <img src="{{ article.subarticle.first.photo|thumbnail_url:'kechabugun' }}"
+                                                 alt="image description" style="height:345px">
+                                        </div>
+                                        <div class="txts">
+                                            <div class="txt-box">
+                                                <h3>{{ article.subarticle.first.title }}</h3>
+                                                <p>{{ article.subarticle.first.body|truncatechars:300|safe }}</p>
+                                                <a href="{% url 'uznation:small' pk=article.subarticle.first.pk %}"
+                                                   class="continue"><span>{% trans 'READ MORE' %}</span> <i class="icon-right-thin"></i></a>
+                                                <!-- 1991-yildanoldingi holatlar, SSSR haqida link-->
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="txt-holder right wow fadeInUp" data-wow-delay="0.6s">
+                                        <div class="txts">
+                                            <div class="txt-box">
+                                                <h3>{{ article.subarticle.last.title }}</h3>
+                                                <p>{{ article.subarticle.last.body|truncatechars:300|safe }}</p>
+                                                <a href="{% url 'uznation:small' pk=article.subarticle.last.pk %}"
+                                                   class="continue"><span>{% trans 'READ MORE' %}</span> <i class="icon-right-thin"></i></a>
+                                            </div>
+                                        </div>
+                                        <div class="images">
+                                            <img src="{{ article.subarticle.last.photo|thumbnail_url:'kechabugun' }}"
+                                                 alt="image description">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="txt-frame wow fadeInRight" data-wow-delay="0.6s">
+                                    <h2 class="tild">{{ article.b_tild }}</h2>
+                                    <!--<span class="num">06</span> -->
+                                    <a href="{% url 'uznation:mainarticle' pk=article.pk %}" class="more">{% trans 'MORE' %}</a>
+                                </div>
+                            </div>
+                        {% endif %}
+                        {% if forloop.counter == 5 %}
+                            <div class="info info-5">
+                                <div class="txt-frame wow fadeInLeft" data-wow-delay="0.6s">
+                                    <h2 class="tild">{{ article.b_tild }}</h2>
+                                    <!-- <span class="num">05</span> -->
+                                    <a href="{% url 'uznation:mainarticle' pk=article.pk %}" class="more">{% trans 'MORE' %}</a>
+                                </div>
+                                <div class="img-frame wow fadeInUp" data-wow-delay="0.6s">
+                                    <div class="slider">
+                                        <div class="mask">
+                                            {% for t in article.subarticle.all %}
+                                                <div class="slide">
+                                                    <blockquote>
+                                                        <q>{{ t.body|truncatechars:280|safe }}<br/><br/></q>
+                                                        <footer>
+                                                            <span class="designation">{{ t.title }}</span>
+                                                        </footer>
+                                                    </blockquote>
+                                                    <div class="images">
+                                                        <img src="{{ t.photo|thumbnail_url:'turism' }}"
+                                                             alt="image description" style="height:502px">
+                                                    </div>
+                                                </div>
+                                            {% endfor %}
+                                        </div>
+                                        <div class="pagination">
+                                            <ul class="mask-inner">
+                                                {% for t in article.subarticle.all %}
+                                                    <li>
+                                                        <a href="#"><img src="{{ t.photo|thumbnail_url:'turism' }}"
+                                                                         alt="image description"
+                                                                         style="height:164px"></a>
+                                                    </li>
+                                                {% endfor %}
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        {% endif %}
+                    {% endfor %}
+                    <div class="info info-6">
+                        <div class="txt-frame wow fadeInUp" data-wow-delay="0.6s">
                             {% for news in all_news %}
-                            <ul class="text-box team{{ forloop.counter }}">
-								<li>
-									<h2><a href="#">{{ news.news_title }}</a></h2>
-								</li>
-								<li>
-									<p>{{ news.news_body|truncatechars:200|safe }}</p>
-								</li>
-							</ul>
+                                <ul class="text-box team{{ forloop.counter }}">
+                                    <li>
+                                        <h2><a href="{% url 'uznation:news' pk=news.pk %}">{{ news.news_title }}</a>
+                                        </h2>
+                                    </li>
+                                    <li>
+                                        <p>{{ news.news_body|truncatechars:200|safe }}</p>
+                                    </li>
+                                </ul>
                             {% endfor %}
-							<div class="img-holder wow fadeInUp" data-wow-delay="0.5s">
-								{% for news in all_news %}
-								<div class="box box{{ forloop.counter }}">
-									<div class="img"><a href="#" class="team{{ forloop.counter }}-opener"><img src="{{ news.news_photo.url }}" alt="image description" style="width:260px; height:340px"></a></div>
-									<div class="txt-box">
-										<h3><a href="#" class="team{{ forloop.counter }}-opener">{{ news.news_title }}</a></h3>
-										<span class="designation">{{ news.news_created|date:'d.m.Y' }}</span>
-									</div>
-								</div>
-								{% endfor %}
-							</div>
-						</div>
-						<div class="img-frame">
-							<div class="image wow fadeInRight" data-wow-delay="0.6s" style="visibility: visible; animation-delay: 0.6s; animation-name: fadeInRight;">
+                            <div class="img-holder wow fadeInUp" data-wow-delay="0.5s">
                                 {% for news in all_news %}
-                                <img src="{{ news.news_photo.url }}" alt="image description" class="team{{ forloop.counter }}-img" style="width:400px; height:550px">
+                                    <div class="box box{{ forloop.counter }}">
+                                        <div class="img"><a href="#" class="team{{ forloop.counter }}-opener">
+                                            <img src="{{ news.news_photo|thumbnail_url:'news_index' }}"
+                                                 alt="image description" style="width:260px; height:340px">
+                                        </a></div>
+                                        <div class="txt-box">
+                                            <h3><a href="#"
+                                                   class="team{{ forloop.counter }}-opener">{{ news.news_title }}</a>
+                                            </h3>
+                                            <span class="designation">{{ news.news_created|date:'d.m.Y' }}</span>
+                                        </div>
+                                    </div>
                                 {% endfor %}
-							</div>
-							<div class="text wow fadeInRight" data-wow-delay="0.3s">
-								<h2 class="tild">Yangiliklar</h2>
-								<a href="#" class="more">Batafsil</a>
-							</div>
-						</div>
-				    </div>
-           {% endblock %}
+                            </div>
+                        </div>
+                        <div class="img-frame">
+                            <div class="image wow fadeInRight" data-wow-delay="0.6s"
+                                 style="visibility: visible; animation-delay: 0.6s; animation-name: fadeInRight;">
+                                {% for news in all_news %}
+                                    <img src="{{ news.news_photo|thumbnail_url:'news_index' }}" alt="image description"
+                                         class="team{{ forloop.counter }}-img" style="width:400px; height:550px">
+                                {% endfor %}
+                            </div>
+                            <div class="text wow fadeInRight" data-wow-delay="0.3s">
+                                <h2 class="tild">{% trans 'LAST NEWS' %}</h2>
+                            </div>
+                        </div>
+                    </div>
+                {% endblock %}
+
+            </div>
         </div>
-    </div>
-</main>
+    </main>
 {% endblock %}
 
-{% block logo-footer %}
-<img alt="UzNation" src="{{ info.logo_footer|thumbnail_url:'logo_footer' }}">
-{% endblock %}
 
-{% block footer-txt %}
-<div class="footer-txt">
-    <div class="text">
-        <p>
-            {{ info.description|safe }}
-        </p>
-        <div class="contact">
-            {% if info.address %}
-                <address><span class="yellow">Address:</span>{{ info.address|safe }}</address>
-            {% endif %}
-            {% if info.email %}
-                <span class="email"><span class="yellow">Email: </span><a href="{{ info.email }}">{{ info.email }}</a></span>
-            {% endif %}
-            {% if info.phone_1 %}
-                <span class="tel"><span class="yellow">Post: </span>{{ info.phone_1 }}</span>
-            {% endif %}
-            {% if info.phone_2 %}
-                <br>
-                <span class="tel"><span class="yellow"></span>{{ info.phone_2 }}</span>
-            {% endif %}
-        </div>
-    </div>
-    <ul class="testimonial">
-        {% for news in all_news.all %}
-            <li>
-                <p><a href="{% url 'uznation:news' title=news.news_title|slugify %}"><i class="glyphicon glyphicon-check"></i><span>{{ news.news_title|safe }}</span></a></p>
-                <span>{{ news.news_created|date:'d.m.Y' }} {{ news.news_created|time }}</span>
-            </li>
-        {% endfor %}
-    </ul>
-</div>
-{% endblock %}
-
-{% block feedback %}
-    <div class="footer-widget contact-widget">
-        <div class="widget-title"><h3>Biz Bilan Bog'laning!</h3></div>
-        <form class="form-horizontal" role="form" method="post">
-            {% csrf_token %}
-            {{ feedback_form.non_field_errors }}
-            {{ feedback_form.media }}
-   <div class="form-group">
-     <div class="col-sm-10">
-         {{ feedback_form.name.errors }}
-         {{ feedback_form.name }}
-     </div>
-   </div>
-   <div class="form-group">
-      <div class="col-sm-10">
-          {{ feedback_form.email.errors }}
-          {{ feedback_form.email }}
-      </div>
-    </div><div class="form-group">
-      <div class="col-sm-10">
-      {{ feedback_form.comment.errors }}
-          {{ feedback_form.comment }}
-      </div>
-    </div>
-    <div class="form-group">
-      <div class="col-sm-10">
-        <input type="submit" value="Send Message" name="feedback_form" class="btn btn-default">
-      </div>
-    </div>
-  </form>
-    </div>
-{% endblock %}
-
-{% block sub-nav %}
-<ul class="sub-nav">
-    {% for m in menus.all %}
-
-        <li><a href="#">{{ m.name }}</a></li>
-
-    {% endfor %}
-</ul>
-{% endblock %}

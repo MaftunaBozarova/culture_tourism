@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-08-04 17:56+0500\n"
+"POT-Creation-Date: 2016-08-11 12:30+0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,46 +17,253 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: .\Culture_and_Tourism\settings.py:107
+#: .\Culture_and_Tourism\settings.py:115
 msgid "English"
 msgstr "Ingliz"
 
-#: .\Culture_and_Tourism\settings.py:108
+#: .\Culture_and_Tourism\settings.py:116
 msgid "Russian"
 msgstr ""
 
-#: .\Culture_and_Tourism\settings.py:109
+#: .\Culture_and_Tourism\settings.py:117
 msgid "Uzbek"
 msgstr "Uzbekcha"
 
-#: .\culture_tourism\models.py:11
-msgid "Menu:"
-msgstr "Menyu"
+#: .\culture_tourism\forms.py:21
+msgid "Search"
+msgstr "Qidirish"
 
-#: .\culture_tourism\models.py:12
-msgid "Url:"
-msgstr "Url"
-
-#: .\culture_tourism\models.py:19
-msgid "Menus"
-msgstr "Menyular"
-
-#: .\culture_tourism\models.py:20
-msgid "Menu"
-msgstr "Menyu"
-
-#: .\culture_tourism\models.py:76
+#: .\culture_tourism\models.py:82
 msgid "till 12 century"
 msgstr "12-asrgacha"
 
-#: .\culture_tourism\models.py:77
-msgid "from 12 to 18 century"
+#: .\culture_tourism\models.py:83
+msgid "from 12th to 18th century"
 msgstr ""
 
-#: .\culture_tourism\models.py:78
-msgid "from 18 century till now"
+#: .\culture_tourism\models.py:84
+msgid "from 18th century till now"
 msgstr ""
 
-#: .\culture_tourism\templates\maqol.html:11
-msgid "UzNation"
+#: .\culture_tourism\templates\base-for-common-right.html:158
+#: .\culture_tourism\templates\base-for-common.html:157
+msgid "MOST VISITED PLACES"
 msgstr ""
+
+#: .\culture_tourism\templates\base-for-common-right.html:168
+#: .\culture_tourism\templates\base-for-common.html:167
+msgid "PICTURES"
+msgstr ""
+
+#: .\culture_tourism\templates\base-for-common-right.html:174
+#: .\culture_tourism\templates\base-for-common.html:173
+msgid "Calendar"
+msgstr ""
+
+#: .\culture_tourism\templates\base-for-common-right.html:185
+#: .\culture_tourism\templates\base-for-common.html:184
+msgid "Mo"
+msgstr ""
+
+#: .\culture_tourism\templates\base-for-common-right.html:186
+#: .\culture_tourism\templates\base-for-common.html:185
+msgid "Tu"
+msgstr ""
+
+#: .\culture_tourism\templates\base-for-common-right.html:187
+#: .\culture_tourism\templates\base-for-common.html:186
+msgid "We"
+msgstr ""
+
+#: .\culture_tourism\templates\base-for-common-right.html:188
+#: .\culture_tourism\templates\base-for-common.html:187
+msgid "Th"
+msgstr ""
+
+#: .\culture_tourism\templates\base-for-common-right.html:189
+#: .\culture_tourism\templates\base-for-common.html:188
+msgid "Fr"
+msgstr ""
+
+#: .\culture_tourism\templates\base-for-common-right.html:190
+#: .\culture_tourism\templates\base-for-common.html:189
+msgid "Sa"
+msgstr ""
+
+#: .\culture_tourism\templates\base-for-common-right.html:191
+#: .\culture_tourism\templates\base-for-common.html:190
+msgid "Su"
+msgstr ""
+
+#: .\culture_tourism\templates\base-for-common-right.html:254
+#: .\culture_tourism\templates\base-for-common.html:253
+msgid "TAGS"
+msgstr ""
+
+#: .\culture_tourism\templates\base-for-common-right.html:261
+#: .\culture_tourism\templates\base-for-common.html:260
+#: .\templates\index.html:359
+msgid "LAST NEWS"
+msgstr "YANGILIKLAR"
+
+#: .\culture_tourism\templates\base-for-common-right.html:281
+#: .\culture_tourism\templates\base-for-common.html:280
+msgid "TIME IN UZBEKISTAN"
+msgstr "O'zbekistonda soat"
+
+#: .\culture_tourism\templates\base-for-common-right.html:308
+#: .\culture_tourism\templates\base-for-common.html:307
+#: .\culture_tourism\templates\base.html:157
+msgid "Address"
+msgstr "Manzil"
+
+#: .\culture_tourism\templates\base-for-common-right.html:312
+#: .\culture_tourism\templates\base-for-common.html:311
+#: .\culture_tourism\templates\base.html:161
+msgid "Email"
+msgstr "Elektron pochta"
+
+#: .\culture_tourism\templates\base-for-common-right.html:317
+#: .\culture_tourism\templates\base-for-common.html:316
+#: .\culture_tourism\templates\base.html:166
+msgid "Phone number"
+msgstr "Telefon raqam"
+
+#: .\culture_tourism\templates\base-for-common-right.html:341
+#: .\culture_tourism\templates\base-for-common.html:340
+#: .\culture_tourism\templates\base.html:191
+msgid "Contact with us!"
+msgstr "Biz bilan bog'laning!"
+
+#: .\culture_tourism\templates\base-for-common-right.html:367
+#: .\culture_tourism\templates\base-for-common.html:366
+#: .\culture_tourism\templates\base.html:217
+msgid "Send Message"
+msgstr "Xabarni yuborish"
+
+#: .\culture_tourism\templates\base-for-common-right.html:386
+#: .\culture_tourism\templates\base-for-common.html:385
+#: .\culture_tourism\templates\base.html:235
+msgid "All rights reserved"
+msgstr "Barcha huquqlar himoyalangan"
+
+#: .\culture_tourism\templates\base-for-common-right.html:414
+#: .\culture_tourism\templates\base-for-common.html:413
+msgid "January"
+msgstr ""
+
+#: .\culture_tourism\templates\base-for-common-right.html:414
+#: .\culture_tourism\templates\base-for-common.html:413
+msgid "February"
+msgstr ""
+
+#: .\culture_tourism\templates\base-for-common-right.html:414
+#: .\culture_tourism\templates\base-for-common.html:413
+msgid "March"
+msgstr ""
+
+#: .\culture_tourism\templates\base-for-common-right.html:415
+#: .\culture_tourism\templates\base-for-common.html:414
+msgid "April"
+msgstr ""
+
+#: .\culture_tourism\templates\base-for-common-right.html:415
+#: .\culture_tourism\templates\base-for-common.html:414
+msgid "May"
+msgstr ""
+
+#: .\culture_tourism\templates\base-for-common-right.html:415
+#: .\culture_tourism\templates\base-for-common.html:414
+msgid "June"
+msgstr ""
+
+#: .\culture_tourism\templates\base-for-common-right.html:416
+#: .\culture_tourism\templates\base-for-common.html:415
+msgid "July"
+msgstr ""
+
+#: .\culture_tourism\templates\base-for-common-right.html:416
+#: .\culture_tourism\templates\base-for-common.html:415
+msgid "August"
+msgstr ""
+
+#: .\culture_tourism\templates\base-for-common-right.html:416
+#: .\culture_tourism\templates\base-for-common.html:415
+msgid "September"
+msgstr ""
+
+#: .\culture_tourism\templates\base-for-common-right.html:417
+#: .\culture_tourism\templates\base-for-common.html:416
+msgid "October"
+msgstr ""
+
+#: .\culture_tourism\templates\base-for-common-right.html:417
+#: .\culture_tourism\templates\base-for-common.html:416
+#, fuzzy
+#| msgid "Phone number"
+msgid "November"
+msgstr "Telefon raqam"
+
+#: .\culture_tourism\templates\base-for-common-right.html:417
+#: .\culture_tourism\templates\base-for-common.html:416
+msgid "December"
+msgstr ""
+
+#: .\templates\big-text.html:15
+msgid "Tags"
+msgstr "Teglar"
+
+#: .\templates\big-text.html:24
+msgid "Related topics"
+msgstr ""
+
+#: .\templates\index.html:78 .\templates\index.html:101
+#: .\templates\index.html:275 .\templates\index.html:284
+#: .\templates\regions.html:25 .\templates\regions.html:37
+#: .\templates\small-text-for-tales.html:24
+#: .\templates\small-text-for-tales.html:36 .\templates\small-text.html:24
+#: .\templates\small-text.html:36
+msgid "MORE"
+msgstr ""
+
+#: .\templates\index.html:252 .\templates\index.html:263
+#: .\templates\search.html:17 .\templates\search.html:25
+#: .\templates\search.html:33 .\templates\search.html:41
+msgid "READ MORE"
+msgstr ""
+
+#: .\templates\kutubxona.html:3
+msgid "Library"
+msgstr ""
+
+#: .\templates\kutubxona.html:20
+msgid "Download"
+msgstr ""
+
+#: .\templates\maqol.html:144
+msgid "Uzbek Proverbs"
+msgstr ""
+
+#: .\templates\maqol.html:223
+msgid "CALENDAR"
+msgstr ""
+
+#: .\templates\news.html:3
+msgid "News"
+msgstr ""
+
+#: .\templates\small-text-for-tales.html:3
+msgid "Tales"
+msgstr ""
+
+#~ msgid "Menu:"
+#~ msgstr "Menyu"
+
+#~ msgid "Url:"
+#~ msgstr "Url"
+
+#~ msgid "Menus"
+#~ msgstr "Menyular"
+
+#~ msgid "Menu"
+#~ msgstr "Menyu"

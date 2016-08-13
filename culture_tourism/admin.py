@@ -10,7 +10,7 @@ admin.site.register(Menyu, AdminMenu)
 
 
 class RegionAdmin(admin.ModelAdmin):
-    list_display = ['region_name', 'region_photo']
+    list_display = ['title', 'photo']
 admin.site.register(Regions, RegionAdmin)
 
 
@@ -59,11 +59,6 @@ class FeedbackAdmin(admin.ModelAdmin):
 admin.site.register(Feedback, FeedbackAdmin)
 
 
-class PromoAdmin(admin.ModelAdmin):
-    list_display = ['promo_text', 'promo_photo']
-admin.site.register(Promo, PromoAdmin)
-
-
 class SubArticleAdmin(admin.ModelAdmin):
     list_display = ['title', 'photo', 'body', 'created']
 admin.site.register(SubArticle, SubArticleAdmin)
@@ -79,26 +74,6 @@ class MaqolAdmin(admin.ModelAdmin):
 admin.site.register(Maqollar, MaqolAdmin)
 
 
-class TurismAdmin(admin.ModelAdmin):
-    list_display = ['name', 'region', 'created']
-admin.site.register(Tourism, TurismAdmin)
-
-
-class KechaBugunAdmin(admin.ModelAdmin):
-    list_display = ['title', 'created']
-admin.site.register(KechaBugun, KechaBugunAdmin)
-
-
-class FirstAdmin(admin.ModelAdmin):
-    list_display = ['title', 'created']
-admin.site.register(First, FirstAdmin)
-
-
-class SecondAdmin(admin.ModelAdmin):
-    list_display = ['title', 'created']
-admin.site.register(Second, FirstAdmin)
-
-
-class SanatAdmin(admin.ModelAdmin):
-    list_display = ['title', 'created']
-admin.site.register(Sanat, SanatAdmin)
+class TaleAdmin(admin.ModelAdmin):
+    fields = ['tale', 'author', 'file']
+admin.site.register(Tale, TaleAdmin)

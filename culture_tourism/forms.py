@@ -1,6 +1,7 @@
 from django import forms
 from .models import Feedback
 from redactor.widgets import RedactorEditor
+from django.utils.translation import ugettext as _
 
 
 class FeedBackForm(forms.ModelForm):
@@ -17,4 +18,4 @@ class FeedBackForm(forms.ModelForm):
 
 class SearchForm(forms.Form):
     search_query = forms.CharField(label='', max_length=512, required=False, widget=forms.TextInput(attrs={
-        'type': 'search', 'name': 'search_web', 'placeholder': 'Search'}))
+        'type': 'search', 'placeholder': _('Search')}))
