@@ -23,15 +23,15 @@ msgstr "Ingliz"
 
 #: .\Culture_and_Tourism\settings.py:116
 msgid "Russian"
-msgstr ""
+msgstr "Rus Tili"
 
 #: .\Culture_and_Tourism\settings.py:117
 msgid "Uzbek"
-msgstr "Uzbekcha"
+msgstr "O'zbek Tili"
 
 #: .\culture_tourism\forms.py:21
 msgid "Search"
-msgstr "Qidirish"
+msgstr "Qidiruv"
 
 #: .\culture_tourism\models.py:82
 msgid "till 12 century"
@@ -39,66 +39,66 @@ msgstr "12-asrgacha"
 
 #: .\culture_tourism\models.py:83
 msgid "from 12th to 18th century"
-msgstr ""
+msgstr "12-asrdan 18-asrgacha"
 
 #: .\culture_tourism\models.py:84
 msgid "from 18th century till now"
-msgstr ""
+msgstr "18-asrdan hozirgacha"
 
 #: .\culture_tourism\templates\base-for-common-right.html:158
 #: .\culture_tourism\templates\base-for-common.html:157
 msgid "MOST VISITED PLACES"
-msgstr ""
+msgstr "Ko'rkam Joylar"
 
 #: .\culture_tourism\templates\base-for-common-right.html:168
 #: .\culture_tourism\templates\base-for-common.html:167
 msgid "PICTURES"
-msgstr ""
+msgstr "Rasmlar"
 
 #: .\culture_tourism\templates\base-for-common-right.html:174
 #: .\culture_tourism\templates\base-for-common.html:173
 msgid "Calendar"
-msgstr ""
+msgstr "Taqvim"
 
 #: .\culture_tourism\templates\base-for-common-right.html:185
 #: .\culture_tourism\templates\base-for-common.html:184
 msgid "Mo"
-msgstr ""
+msgstr "Du"
 
 #: .\culture_tourism\templates\base-for-common-right.html:186
 #: .\culture_tourism\templates\base-for-common.html:185
 msgid "Tu"
-msgstr ""
+msgstr "Se"
 
 #: .\culture_tourism\templates\base-for-common-right.html:187
 #: .\culture_tourism\templates\base-for-common.html:186
 msgid "We"
-msgstr ""
+msgstr "Chor"
 
 #: .\culture_tourism\templates\base-for-common-right.html:188
 #: .\culture_tourism\templates\base-for-common.html:187
 msgid "Th"
-msgstr ""
+msgstr "Pay"
 
 #: .\culture_tourism\templates\base-for-common-right.html:189
 #: .\culture_tourism\templates\base-for-common.html:188
 msgid "Fr"
-msgstr ""
+msgstr "Ju"
 
 #: .\culture_tourism\templates\base-for-common-right.html:190
 #: .\culture_tourism\templates\base-for-common.html:189
 msgid "Sa"
-msgstr ""
+msgstr "Shan"
 
 #: .\culture_tourism\templates\base-for-common-right.html:191
 #: .\culture_tourism\templates\base-for-common.html:190
 msgid "Su"
-msgstr ""
+msgstr "Yak"
 
 #: .\culture_tourism\templates\base-for-common-right.html:254
 #: .\culture_tourism\templates\base-for-common.html:253
 msgid "TAGS"
-msgstr ""
+msgstr "Teglar"
 
 #: .\culture_tourism\templates\base-for-common-right.html:261
 #: .\culture_tourism\templates\base-for-common.html:260
@@ -111,7 +111,7 @@ msgstr "YANGILIKLAR"
 msgid "TIME IN UZBEKISTAN"
 msgstr "O'zbekistonda soat"
 
-#: .\culture_tourism\templates\base-for-common-right.html:308
+#: .\culture_tourism\templates\base-for-common-right.html:3081
 #: .\culture_tourism\templates\base-for-common.html:307
 #: .\culture_tourism\templates\base.html:157
 msgid "Address"
@@ -150,52 +150,52 @@ msgstr "Barcha huquqlar himoyalangan"
 #: .\culture_tourism\templates\base-for-common-right.html:414
 #: .\culture_tourism\templates\base-for-common.html:413
 msgid "January"
-msgstr ""
+msgstr "Yanvar"
 
 #: .\culture_tourism\templates\base-for-common-right.html:414
 #: .\culture_tourism\templates\base-for-common.html:413
 msgid "February"
-msgstr ""
+msgstr "Fevral"
 
 #: .\culture_tourism\templates\base-for-common-right.html:414
 #: .\culture_tourism\templates\base-for-common.html:413
 msgid "March"
-msgstr ""
+msgstr "Mart"
 
 #: .\culture_tourism\templates\base-for-common-right.html:415
 #: .\culture_tourism\templates\base-for-common.html:414
 msgid "April"
-msgstr ""
+msgstr "Aprel"
 
 #: .\culture_tourism\templates\base-for-common-right.html:415
 #: .\culture_tourism\templates\base-for-common.html:414
 msgid "May"
-msgstr ""
+msgstr "May"
 
 #: .\culture_tourism\templates\base-for-common-right.html:415
 #: .\culture_tourism\templates\base-for-common.html:414
 msgid "June"
-msgstr ""
+msgstr "Iyun"
 
 #: .\culture_tourism\templates\base-for-common-right.html:416
 #: .\culture_tourism\templates\base-for-common.html:415
 msgid "July"
-msgstr ""
+msgstr "Iyul"
 
 #: .\culture_tourism\templates\base-for-common-right.html:416
 #: .\culture_tourism\templates\base-for-common.html:415
 msgid "August"
-msgstr ""
+msgstr "Avgust"
 
 #: .\culture_tourism\templates\base-for-common-right.html:416
 #: .\culture_tourism\templates\base-for-common.html:415
 msgid "September"
-msgstr ""
+msgstr "Sentabr"
 
 #: .\culture_tourism\templates\base-for-common-right.html:417
 #: .\culture_tourism\templates\base-for-common.html:416
 msgid "October"
-msgstr ""
+msgstr "Oktabr"
 
 #: .\culture_tourism\templates\base-for-common-right.html:417
 #: .\culture_tourism\templates\base-for-common.html:416
@@ -207,7 +207,7 @@ msgstr "Telefon raqam"
 #: .\culture_tourism\templates\base-for-common-right.html:417
 #: .\culture_tourism\templates\base-for-common.html:416
 msgid "December"
-msgstr ""
+msgstr "Dekabr"
 
 #: .\templates\big-text.html:15
 msgid "Tags"
@@ -215,7 +215,7 @@ msgstr "Teglar"
 
 #: .\templates\big-text.html:24
 msgid "Related topics"
-msgstr ""
+msgstr "Yaqin Mavzular"
 
 #: .\templates\index.html:78 .\templates\index.html:101
 #: .\templates\index.html:275 .\templates\index.html:284
@@ -224,37 +224,37 @@ msgstr ""
 #: .\templates\small-text-for-tales.html:36 .\templates\small-text.html:24
 #: .\templates\small-text.html:36
 msgid "MORE"
-msgstr ""
+msgstr "Batafsil"
 
 #: .\templates\index.html:252 .\templates\index.html:263
 #: .\templates\search.html:17 .\templates\search.html:25
 #: .\templates\search.html:33 .\templates\search.html:41
 msgid "READ MORE"
-msgstr ""
+msgstr "Davomi"
 
 #: .\templates\kutubxona.html:3
 msgid "Library"
-msgstr ""
+msgstr "Kutubxona"
 
 #: .\templates\kutubxona.html:20
 msgid "Download"
-msgstr ""
+msgstr "Yuklab Olish"
 
 #: .\templates\maqol.html:144
 msgid "Uzbek Proverbs"
-msgstr ""
+msgstr "O'zbek Xalq Maqollari"
 
 #: .\templates\maqol.html:223
 msgid "CALENDAR"
-msgstr ""
+msgstr "Taqvim"
 
 #: .\templates\news.html:3
 msgid "News"
-msgstr ""
+msgstr "Yangiliklar"
 
 #: .\templates\small-text-for-tales.html:3
 msgid "Tales"
-msgstr ""
+msgstr "O'zbek Xalq Ertaklari"
 
 #~ msgid "Menu:"
 #~ msgstr "Menyu"

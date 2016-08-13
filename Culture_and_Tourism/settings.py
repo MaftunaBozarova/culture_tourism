@@ -26,9 +26,9 @@ location = lambda x: os.path.join(BASE_DIR, x)
 SECRET_KEY = '!cfp_47rmkd^ekg9fhd)e^80nlj$9^jve*_jp3!24q=j2$st))'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 # Application definition
 

@@ -1,10 +1,18 @@
 from django.db.models import Count
 from django.shortcuts import render, redirect
-from django.shortcuts import get_object_or_404
+from django.shortcuts import get_object_or_404, render_to_response
+from django.template import RequestContext
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from .models import *
 from .forms import FeedBackForm, SearchForm
 from django.db.models import Q
+
+
+def not_found_view(request):
+    response = render_to_response('404.html',
+                                  context_instance=RequestContext(request))
+    response.status_code = 404
+    return response
 
 
 def search(request):
@@ -166,7 +174,7 @@ def regions(request, pk=None):
 
 
 def about_us(request):
-    return render(request, 'about.html')
+    return render(request, 'aboutus.html')
 
 
 def gallery(request):

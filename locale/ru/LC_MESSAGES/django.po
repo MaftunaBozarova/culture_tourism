@@ -22,15 +22,15 @@ msgstr ""
 
 #: .\Culture_and_Tourism\settings.py:115
 msgid "English"
-msgstr ""
+msgstr "Английский"
 
 #: .\Culture_and_Tourism\settings.py:116
 msgid "Russian"
-msgstr ""
+msgstr "Русский"
 
 #: .\Culture_and_Tourism\settings.py:117
 msgid "Uzbek"
-msgstr ""
+msgstr "Узбекский язык"
 
 #: .\culture_tourism\forms.py:21
 msgid "Search"
@@ -38,185 +38,185 @@ msgstr "Поиск"
 
 #: .\culture_tourism\models.py:82
 msgid "till 12 century"
-msgstr ""
+msgstr "До 12 века"
 
 #: .\culture_tourism\models.py:83
 msgid "from 12th to 18th century"
-msgstr ""
+msgstr "С 12-го до 18-го века"
 
 #: .\culture_tourism\models.py:84
 msgid "from 18th century till now"
-msgstr ""
+msgstr "С 18-го века до сих пор"
 
 #: .\culture_tourism\templates\base-for-common-right.html:158
 #: .\culture_tourism\templates\base-for-common.html:157
 msgid "MOST VISITED PLACES"
-msgstr ""
+msgstr "Наиболее посещаемых мест"
 
 #: .\culture_tourism\templates\base-for-common-right.html:168
 #: .\culture_tourism\templates\base-for-common.html:167
 msgid "PICTURES"
-msgstr ""
+msgstr "Картинки"
 
 #: .\culture_tourism\templates\base-for-common-right.html:174
 #: .\culture_tourism\templates\base-for-common.html:173
 msgid "Calendar"
-msgstr ""
+msgstr "Календарь"
 
 #: .\culture_tourism\templates\base-for-common-right.html:185
 #: .\culture_tourism\templates\base-for-common.html:184
 msgid "Mo"
-msgstr ""
+msgstr "Пн"
 
 #: .\culture_tourism\templates\base-for-common-right.html:186
 #: .\culture_tourism\templates\base-for-common.html:185
 msgid "Tu"
-msgstr ""
+msgstr "Вт"
 
 #: .\culture_tourism\templates\base-for-common-right.html:187
 #: .\culture_tourism\templates\base-for-common.html:186
 msgid "We"
-msgstr ""
+msgstr "Ср"
 
 #: .\culture_tourism\templates\base-for-common-right.html:188
 #: .\culture_tourism\templates\base-for-common.html:187
 msgid "Th"
-msgstr ""
+msgstr "Чт"
 
 #: .\culture_tourism\templates\base-for-common-right.html:189
 #: .\culture_tourism\templates\base-for-common.html:188
 msgid "Fr"
-msgstr ""
+msgstr "Пт"
 
 #: .\culture_tourism\templates\base-for-common-right.html:190
 #: .\culture_tourism\templates\base-for-common.html:189
 msgid "Sa"
-msgstr ""
+msgstr "Сб"
 
 #: .\culture_tourism\templates\base-for-common-right.html:191
 #: .\culture_tourism\templates\base-for-common.html:190
 msgid "Su"
-msgstr ""
+msgstr "Вс"
 
 #: .\culture_tourism\templates\base-for-common-right.html:254
 #: .\culture_tourism\templates\base-for-common.html:253
 msgid "TAGS"
-msgstr ""
+msgstr "Теги"
 
 #: .\culture_tourism\templates\base-for-common-right.html:261
 #: .\culture_tourism\templates\base-for-common.html:260
 #: .\templates\index.html:359
 msgid "LAST NEWS"
-msgstr ""
+msgstr "Последние новости"
 
 #: .\culture_tourism\templates\base-for-common-right.html:281
 #: .\culture_tourism\templates\base-for-common.html:280
 msgid "TIME IN UZBEKISTAN"
-msgstr ""
+msgstr "Время в Узбекистанe"
 
 #: .\culture_tourism\templates\base-for-common-right.html:308
 #: .\culture_tourism\templates\base-for-common.html:307
 #: .\culture_tourism\templates\base.html:157
 msgid "Address"
-msgstr ""
+msgstr "Адрес"
 
 #: .\culture_tourism\templates\base-for-common-right.html:312
 #: .\culture_tourism\templates\base-for-common.html:311
 #: .\culture_tourism\templates\base.html:161
 msgid "Email"
-msgstr ""
+msgstr "Электронная почта(е-мейл)"
 
 #: .\culture_tourism\templates\base-for-common-right.html:317
 #: .\culture_tourism\templates\base-for-common.html:316
 #: .\culture_tourism\templates\base.html:166
 msgid "Phone number"
-msgstr ""
+msgstr "Номер телефона"
 
 #: .\culture_tourism\templates\base-for-common-right.html:341
 #: .\culture_tourism\templates\base-for-common.html:340
 #: .\culture_tourism\templates\base.html:191
 msgid "Contact with us!"
-msgstr ""
+msgstr "Связаться с нами"
 
 #: .\culture_tourism\templates\base-for-common-right.html:367
 #: .\culture_tourism\templates\base-for-common.html:366
 #: .\culture_tourism\templates\base.html:217
 msgid "Send Message"
-msgstr ""
+msgstr "Отправить сообщение"
 
 #: .\culture_tourism\templates\base-for-common-right.html:386
 #: .\culture_tourism\templates\base-for-common.html:385
 #: .\culture_tourism\templates\base.html:235
 msgid "All rights reserved"
-msgstr ""
+msgstr "Все права защищены"
 
 #: .\culture_tourism\templates\base-for-common-right.html:414
 #: .\culture_tourism\templates\base-for-common.html:413
 msgid "January"
-msgstr ""
+msgstr "Январь"
 
 #: .\culture_tourism\templates\base-for-common-right.html:414
 #: .\culture_tourism\templates\base-for-common.html:413
 msgid "February"
-msgstr ""
+msgstr "Февраль"
 
 #: .\culture_tourism\templates\base-for-common-right.html:414
 #: .\culture_tourism\templates\base-for-common.html:413
 msgid "March"
-msgstr ""
+msgstr "Март"
 
 #: .\culture_tourism\templates\base-for-common-right.html:415
 #: .\culture_tourism\templates\base-for-common.html:414
 msgid "April"
-msgstr ""
+msgstr "Апрель"
 
 #: .\culture_tourism\templates\base-for-common-right.html:415
 #: .\culture_tourism\templates\base-for-common.html:414
 msgid "May"
-msgstr ""
+msgstr "Май"
 
 #: .\culture_tourism\templates\base-for-common-right.html:415
 #: .\culture_tourism\templates\base-for-common.html:414
 msgid "June"
-msgstr ""
+msgstr "Июнь"
 
 #: .\culture_tourism\templates\base-for-common-right.html:416
 #: .\culture_tourism\templates\base-for-common.html:415
 msgid "July"
-msgstr ""
+msgstr "Июль"
 
 #: .\culture_tourism\templates\base-for-common-right.html:416
 #: .\culture_tourism\templates\base-for-common.html:415
 msgid "August"
-msgstr ""
+msgstr "Август"
 
 #: .\culture_tourism\templates\base-for-common-right.html:416
 #: .\culture_tourism\templates\base-for-common.html:415
 msgid "September"
-msgstr ""
+msgstr "Сентябрь"
 
 #: .\culture_tourism\templates\base-for-common-right.html:417
 #: .\culture_tourism\templates\base-for-common.html:416
 msgid "October"
-msgstr ""
+msgstr "Октябрь"
 
 #: .\culture_tourism\templates\base-for-common-right.html:417
 #: .\culture_tourism\templates\base-for-common.html:416
 msgid "November"
-msgstr ""
+msgstr "Ноябрь"
 
 #: .\culture_tourism\templates\base-for-common-right.html:417
 #: .\culture_tourism\templates\base-for-common.html:416
 msgid "December"
-msgstr ""
+msgstr "Декабрь"
 
 #: .\templates\big-text.html:15
 msgid "Tags"
-msgstr ""
+msgstr "Теги"
 
 #: .\templates\big-text.html:24
 msgid "Related topics"
-msgstr ""
+msgstr "Похожие темы"
 
 #: .\templates\index.html:78 .\templates\index.html:101
 #: .\templates\index.html:275 .\templates\index.html:284
@@ -225,34 +225,34 @@ msgstr ""
 #: .\templates\small-text-for-tales.html:36 .\templates\small-text.html:24
 #: .\templates\small-text.html:36
 msgid "MORE"
-msgstr ""
+msgstr "Больше"
 
 #: .\templates\index.html:252 .\templates\index.html:263
 #: .\templates\search.html:17 .\templates\search.html:25
 #: .\templates\search.html:33 .\templates\search.html:41
 msgid "READ MORE"
-msgstr ""
+msgstr "Прочитайте больше"
 
 #: .\templates\kutubxona.html:3
 msgid "Library"
-msgstr ""
+msgstr "Библиотека"
 
 #: .\templates\kutubxona.html:20
 msgid "Download"
-msgstr ""
+msgstr "Скачать"
 
 #: .\templates\maqol.html:144
 msgid "Uzbek Proverbs"
-msgstr ""
+msgstr "Узбекские пословицы"
 
 #: .\templates\maqol.html:223
 msgid "CALENDAR"
-msgstr ""
+msgstr "Календарь"
 
 #: .\templates\news.html:3
 msgid "News"
-msgstr ""
+msgstr "Новости"
 
 #: .\templates\small-text-for-tales.html:3
 msgid "Tales"
-msgstr ""
+msgstr "Узбекские сказки"
