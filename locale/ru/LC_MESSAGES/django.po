@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-08-11 12:30+0500\n"
+"POT-Creation-Date: 2016-08-16 02:01+0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -47,6 +47,18 @@ msgstr "С 12-го до 18-го века"
 #: .\culture_tourism\models.py:84
 msgid "from 18th century till now"
 msgstr "С 18-го века до сих пор"
+
+#: .\culture_tourism\templates\404.html:29
+msgid "Oops! Page Not Found"
+msgstr "К сожалению! Страница не найдена"
+
+#: .\culture_tourism\templates\404.html:30
+msgid "The page you were looking for could not be found."
+msgstr "Страница, которую вы ищете не может быть найден"
+
+#: .\culture_tourism\templates\404.html:32
+msgid "RETURN HOME"
+msgstr "ВЕРНУТЬСЯ ГЛАВОЕ СТРАНИЦЕ"
 
 #: .\culture_tourism\templates\base-for-common-right.html:158
 #: .\culture_tourism\templates\base-for-common.html:157
@@ -210,6 +222,105 @@ msgstr "Ноябрь"
 msgid "December"
 msgstr "Декабрь"
 
+#: .\templates\aboutus.html:3 .\templates\aboutus.html:52
+msgid "About Us"
+msgstr "О нас"
+
+#: .\templates\aboutus.html:9
+msgid "About the website"
+msgstr "О сайте"
+
+#: .\templates\aboutus.html:10
+msgid "The aim of creating this website"
+msgstr "Цель создания этого сайта"
+
+#: .\templates\aboutus.html:12
+msgid ""
+"This website is made to share some useful information about Uzbek "
+"nationality and\n"
+"                    traditions. <b><em>Uznation.inha.uz</em></b>\n"
+"                    is always ready to give help for users, volunteers, "
+"local people so that they can easily\n"
+"                    get useful information on Uzbekistan and its "
+"nationality. In this\n"
+"                    website, there could be found a great amount of useful "
+"information, collections of amazing\n"
+"                    facts and much more on historical places, sights where "
+"tourists can visit, monuments, architectural\n"
+"                    as well as decorative arts and crafts, famous writers, "
+"scientists, poets, heroes who created the\n"
+"                    history of our land and then praised them all over the "
+"world, regions and their administrative\n"
+"                    departs, national customs, habits, folklore of Uzbek "
+"literature. Besides that, our staff\n"
+"                    never denies receiving your valuable comments and "
+"feedback system is active which means a person who\n"
+"                    wishes to connect with us or say any suggestions for us "
+"can easily send us personal viewpoints.\n"
+"                    Since the main goal of this work is to attract more "
+"visitors, to spend these all among the world and\n"
+"                    making them aware about the history and values of "
+"independence of Uzbekistan. As far the president of\n"
+"                    the Republic of Uzbekistan I.Karimov said, “Uzbekistan "
+"should be one of the high countries that always get\n"
+"                    wonderful future”."
+msgstr ""
+"Этот сайт сделан для обмена полезной информацией о узбекской национальности "
+"и традиций.<b><em>Uznation.inha.uz</em></b>\n"
+"всегда готов оказать помощь для пользователей, волонтеров, местных "
+"жителей, чтобы они могли легко получить полезную информацию по Узбекистану и "
+"его национальности. В этом веб-сайте, вы можете найти большое количество "
+"полезной информации, коллекции удивительных фактов и многое другое на исторических "
+"местах, достопримечательностях, памятниках, архитектурных, декоративно-прикладного "
+"искусства, известных писателей, ученых, поэтов, героев, регионов и их административные "
+"деление, национальные обычаи, фольклор литературы Узбекистана Кроме "
+"того, члены нашей команды никогда не отрицают получать ваши ценные замечания "
+"и обратные связи является активным, означает, что человек, который хочет "
+"связаться с нами или сказать какие-либо предложения для нас может легко "
+"отправить нам любые мнения. Так как основной целью этой работы является "
+"привлечение большего числа пользователей, чтобы тратить все и делает их "
+"знающий об истории и ценностях независимости Узбекистана. Как президента "
+"Республики Узбекистан И.А.Каримов  сказал: «Узбекистан должен быть одним из "
+"высоких стран, которые всегда получают прекрасное будущее»."
+
+#: .\templates\aboutus.html:39
+msgid ""
+"I think if you do something and it turns out pretty good, then you\n"
+"                                        should go do something else "
+"wonderful, not dwell on it for too long. Just figure\n"
+"                                        out what’s next."
+msgstr ""
+"Я думаю, что если вы делаете что-то и оказывается, довольно хорошо, то вы "
+"должны пойти и сделать что-то другое замечательное, не останавливаться на "
+"ней слишком долго. Просто выяснить, что будет дальше."
+
+#: .\templates\aboutus.html:53
+msgid "Who are included in our team !!!"
+msgstr "Наша команда !!!"
+
+
+msgid ""
+"The website that you are watching now was made by 3 member-team. Our "
+"“backend”\n"
+"                    developer is <b><em>Umar Kholdarbekov</em></b>, "
+"“frontend” developers are <b><em>Maftuna Bozarova</em>\n"
+"                    </b> and <b><em>Shakhnoza Ozodova</em></b>. Now, we all "
+"are studying at Inha University in Tashkent under the\n"
+"                    department of Information and Communication Engineering "
+"(ICE). We are glad to say thanks for\n"
+"                    the websites which agreed working with us and thus, our "
+"site used their useful information as an\n"
+"                    extra source. Other special thanks are for<b><em> "
+"Voriskhon</em></b> for making amazing logo for\n"
+"                    <b>Uznation.inha.uz</b>"
+msgstr ""
+"Веб-сайт, который вы смотрите прямо сейчас было сделано 3-члена команды."
+"Наш «бэкэнд» разработчик <b><em>Умар Холдорбеков</em></b> и «Фронтенд» разработчики <b><em>Мафтуна "
+"Бозарова</em></b> и <b><em>Шахноза Озодова</em></b>."
+"На текущий момент, мы все учимся в Университете Инха в г.Ташкент в факультете ICE. "
+"Мы рады сказать спасибо за веб-сайтов, которые согласились работать с нами и, "
+"таким образом, наш сайт использовали свои полезную информацию в качестве дополнительного источника. "
+"И особая благодарность за<b><em> Ворисхон</em></b> для создания удивительный логотип для <b>Uznation.inha.uz</b>"
 #: .\templates\big-text.html:15
 msgid "Tags"
 msgstr "Теги"
@@ -218,12 +329,16 @@ msgstr "Теги"
 msgid "Related topics"
 msgstr "Похожие темы"
 
+#: .\templates\galleriya.html:3
+msgid "Gallery"
+msgstr "Галерея"
+
 #: .\templates\index.html:78 .\templates\index.html:101
 #: .\templates\index.html:275 .\templates\index.html:284
-#: .\templates\regions.html:25 .\templates\regions.html:37
-#: .\templates\small-text-for-tales.html:24
-#: .\templates\small-text-for-tales.html:36 .\templates\small-text.html:24
-#: .\templates\small-text.html:36
+#: .\templates\regions.html:21 .\templates\regions.html:33
+#: .\templates\small-text-for-tales.html:20
+#: .\templates\small-text-for-tales.html:32 .\templates\small-text.html:20
+#: .\templates\small-text.html:32
 msgid "MORE"
 msgstr "Больше"
 
@@ -241,18 +356,27 @@ msgstr "Библиотека"
 msgid "Download"
 msgstr "Скачать"
 
-#: .\templates\maqol.html:144
+#: .\templates\maqol.html:4
+#, fuzzy
+#| msgid "Uzbek Proverbs"
+msgid "Proverbs"
+msgstr "Пословицы"
+
+#: .\templates\maqol.html:11
 msgid "Uzbek Proverbs"
 msgstr "Узбекские пословицы"
-
-#: .\templates\maqol.html:223
-msgid "CALENDAR"
-msgstr "Календарь"
 
 #: .\templates\news.html:3
 msgid "News"
 msgstr "Новости"
 
+#: .\templates\regions.html:3
+msgid "Regions"
+msgstr "Районы"
+
 #: .\templates\small-text-for-tales.html:3
 msgid "Tales"
-msgstr "Узбекские сказки"
+msgstr "Сказки"
+
+#~ msgid "CALENDAR"
+#~ msgstr "Календарь"

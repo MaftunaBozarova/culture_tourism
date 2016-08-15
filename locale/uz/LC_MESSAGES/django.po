@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-08-11 12:30+0500\n"
+"POT-Creation-Date: 2016-08-16 02:01+0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -45,6 +45,18 @@ msgstr "12-asrdan 18-asrgacha"
 msgid "from 18th century till now"
 msgstr "18-asrdan hozirgacha"
 
+#: .\culture_tourism\templates\404.html:29
+msgid "Oops! Page Not Found"
+msgstr "Uzr! Saifa topilmadi"
+
+#: .\culture_tourism\templates\404.html:30
+msgid "The page you were looking for could not be found."
+msgstr "Siz qidirayotgan sahifa topilmadi"
+
+#: .\culture_tourism\templates\404.html:32
+msgid "RETURN HOME"
+msgstr "BOSH SAHIFA"
+
 #: .\culture_tourism\templates\base-for-common-right.html:158
 #: .\culture_tourism\templates\base-for-common.html:157
 msgid "MOST VISITED PLACES"
@@ -73,12 +85,12 @@ msgstr "Se"
 #: .\culture_tourism\templates\base-for-common-right.html:187
 #: .\culture_tourism\templates\base-for-common.html:186
 msgid "We"
-msgstr "Chor"
+msgstr "Ch"
 
 #: .\culture_tourism\templates\base-for-common-right.html:188
 #: .\culture_tourism\templates\base-for-common.html:187
 msgid "Th"
-msgstr "Pay"
+msgstr "Pa"
 
 #: .\culture_tourism\templates\base-for-common-right.html:189
 #: .\culture_tourism\templates\base-for-common.html:188
@@ -88,12 +100,12 @@ msgstr "Ju"
 #: .\culture_tourism\templates\base-for-common-right.html:190
 #: .\culture_tourism\templates\base-for-common.html:189
 msgid "Sa"
-msgstr "Shan"
+msgstr "Sh"
 
 #: .\culture_tourism\templates\base-for-common-right.html:191
 #: .\culture_tourism\templates\base-for-common.html:190
 msgid "Su"
-msgstr "Yak"
+msgstr "Ya"
 
 #: .\culture_tourism\templates\base-for-common-right.html:254
 #: .\culture_tourism\templates\base-for-common.html:253
@@ -111,7 +123,7 @@ msgstr "YANGILIKLAR"
 msgid "TIME IN UZBEKISTAN"
 msgstr "O'zbekistonda soat"
 
-#: .\culture_tourism\templates\base-for-common-right.html:3081
+#: .\culture_tourism\templates\base-for-common-right.html:308
 #: .\culture_tourism\templates\base-for-common.html:307
 #: .\culture_tourism\templates\base.html:157
 msgid "Address"
@@ -209,6 +221,97 @@ msgstr "Telefon raqam"
 msgid "December"
 msgstr "Dekabr"
 
+#: .\templates\aboutus.html:3 .\templates\aboutus.html:52
+msgid "About Us"
+msgstr "Biz haqimizda"
+
+#: .\templates\aboutus.html:9
+msgid "About the website"
+msgstr "Veb-sayt haqida"
+
+#: .\templates\aboutus.html:10
+msgid "The aim of creating this website"
+msgstr "Bu veb-saytdan ko'zlangan maqsad"
+
+#: .\templates\aboutus.html:12
+msgid ""
+"This website is made to share some useful information about Uzbek "
+"nationality and\n"
+"                    traditions. <b><em>Uznation.inha.uz</em></b>\n"
+"                    is always ready to give help for users, volunteers, "
+"local people so that they can easily\n"
+"                    get useful information on Uzbekistan and its "
+"nationality. In this\n"
+"                    website, there could be found a great amount of useful "
+"information, collections of amazing\n"
+"                    facts and much more on historical places, sights where "
+"tourists can visit, monuments, architectural\n"
+"                    as well as decorative arts and crafts, famous writers, "
+"scientists, poets, heroes who created the\n"
+"                    history of our land and then praised them all over the "
+"world, regions and their administrative\n"
+"                    departs, national customs, habits, folklore of Uzbek "
+"literature. Besides that, our staff\n"
+"                    never denies receiving your valuable comments and "
+"feedback system is active which means a person who\n"
+"                    wishes to connect with us or say any suggestions for us "
+"can easily send us personal viewpoints.\n"
+"                    Since the main goal of this work is to attract more "
+"visitors, to spend these all among the world and\n"
+"                    making them aware about the history and values of "
+"independence of Uzbekistan. As far the president of\n"
+"                    the Republic of Uzbekistan I.Karimov said, “Uzbekistan "
+"should be one of the high countries that always get\n"
+"                    wonderful future”."
+msgstr ""
+"Bu vebsayt O’zbekistonning boy madaniyati, milliy urf-odatlar va an’analari haqida to’liq ma’lumot bera oladigan manba sifatida yaratilgan. "
+"<b><em>Uznation.inha.uz</em></b> doim foydalanuvchilarga, ko'ngillilarga va tub aholiga "
+"O'zbekiston haqida sermazmun ma'lumotlar olishda yordam bersihga tayyordir. "
+"Siz bu saytdan O’zbekiston haqida foydali manbalar, qiziqarli faktlar jamlanmasi, balki tarixiy obidalar, ko’zga ko’rinarli "
+"sayilgohlar, ko’ngilochar maskanlar, ilhombaxsh san’at asarlari, qo’l mehnatlari, buyuk shaxslar, yozuvchilar, olimlar, "
+"O’zbekiston tarixi, va uning butun dunyo bo’ylab yuksalishiga katta hissa qo’shgan yurt qahramonlari, viloyatlar, ularning "
+"hududiy bo’linishlari, milliy an’analar, O’zbek adabiyoti va boshqa ko’pgina kerakli ma’lumotlar olishingiz mumkin bo’ladi. "
+"Aytish lozimki, bizning guruh a’zolarimiz hech qachon sizdan izoh va fikr-mulohazalaringizni qabul qilishdan yuz "
+"o’girishmaydi, bu masalada bemalol o’z shaxsiy va biz uchun qimmatli bo’lgan takliflaringizni bizga jo’natishingiz mumkin. "
+"Chunki, bu saytni tuzishdan asosiy maqsad ham yurtimizning boy madaniyatini yanada keng yoyish va ilm ulashish. "
+"Iymonimiz komilki, ilm yo’lida xolis niyat ila qilingan har bir ish o’z qadrini hech qachon yo’qotmaydi. "
+"Yurtboshimiz Islom Abdug'aniyevich Karimov aytganlaridek: «O’zbekiston kelajagi buyuk davlat»."
+#: .\templates\aboutus.html:39
+msgid ""
+"I think if you do something and it turns out pretty good, then you\n"
+"                                        should go do something else "
+"wonderful, not dwell on it for too long. Just figure\n"
+"                                        out what’s next."
+msgstr ""
+"Mening fikrimcha agar siz biror bir ish qilsangiz va u juda yaxshi chiqsa, "
+"demak siz undanda boshqacha va qoyilmaqom bo'lgan ishlarga kirishishingiz kerak, "
+"ishingizning ustida juda ko'p qolib ketmang. Shunchaki bundan keyingilari qanaqa bo'lishini tasavvur qilib ko'ring."
+
+#: .\templates\aboutus.html:53
+msgid "Who are included in our team !!!"
+msgstr "Bizning jamoa !!!"
+
+#: .\templates\aboutus.html:54
+msgid ""
+"The website that you are watching now was made by 3 member-team. Our "
+"“backend”\n"
+"                    developer is <b><em>Umar Kholdarbekov</em></b>, "
+"“frontend” developers are <b><em>Maftuna Bozarova</em>\n"
+"                    </b> and <b><em>Shakhnoza Ozodova</em></b>. Now, we all "
+"are studying at Inha University in Tashkent under the\n"
+"                    department of Information and Communication Engineering "
+"(ICE). We are glad to say thanks for\n"
+"                    the websites which agreed working with us and thus, our "
+"site used their useful information as an\n"
+"                    extra source. Other special thanks are for<b><em> "
+"Voriskhon</em></b> for making amazing logo for\n"
+"                    <b>Uznation.inha.uz</b>"
+msgstr ""
+"Bu mehnat orqasida turgan jamoa a’zolari bilan tanishtiradigan bo’lsak, "
+"jamoamiz 3 kishi: <b><em>Umar Xoldarbekov</em></b> backend dasturchi, <b><em>Maftuna Bozorova</em></b> va <b><em>Shaxnoza Ozodova</em></b> frontend dasturchilar, "
+"Toshkent shahridagi Inha universitetining ICE (Information and Communication Engineering) ya’ni Axborot va Aloqa Muhandisligi fakultetiti talabalaridan iborat. "
+"Bizga yaqindan yordam bergan va qo’llab quvvatlagan universitet xodimlariga, ba'zi saytlarga va <b><em>Uznation.inha.uz</em></b> sayti logosini yaratishda o’z mehnatini ayamagan dizayner <b><em>Vorisxon</em></b>ga o’z minnatdorchiligimizni bildiramiz."
+
 #: .\templates\big-text.html:15
 msgid "Tags"
 msgstr "Teglar"
@@ -217,12 +320,16 @@ msgstr "Teglar"
 msgid "Related topics"
 msgstr "Yaqin Mavzular"
 
+#: .\templates\galleriya.html:3
+msgid "Gallery"
+msgstr "Gallereya"
+
 #: .\templates\index.html:78 .\templates\index.html:101
 #: .\templates\index.html:275 .\templates\index.html:284
-#: .\templates\regions.html:25 .\templates\regions.html:37
-#: .\templates\small-text-for-tales.html:24
-#: .\templates\small-text-for-tales.html:36 .\templates\small-text.html:24
-#: .\templates\small-text.html:36
+#: .\templates\regions.html:21 .\templates\regions.html:33
+#: .\templates\small-text-for-tales.html:20
+#: .\templates\small-text-for-tales.html:32 .\templates\small-text.html:20
+#: .\templates\small-text.html:32
 msgid "MORE"
 msgstr "Batafsil"
 
@@ -240,21 +347,30 @@ msgstr "Kutubxona"
 msgid "Download"
 msgstr "Yuklab Olish"
 
-#: .\templates\maqol.html:144
-msgid "Uzbek Proverbs"
-msgstr "O'zbek Xalq Maqollari"
+#: .\templates\maqol.html:4
+#, fuzzy
+#| msgid "Uzbek Proverbs"
+msgid "Proverbs"
+msgstr "Maqollar"
 
-#: .\templates\maqol.html:223
-msgid "CALENDAR"
-msgstr "Taqvim"
+#: .\templates\maqol.html:11
+msgid "Uzbek Proverbs"
+msgstr "O'zbek Maqollari"
 
 #: .\templates\news.html:3
 msgid "News"
 msgstr "Yangiliklar"
 
+#: .\templates\regions.html:3
+msgid "Regions"
+msgstr "Viloyatlar"
+
 #: .\templates\small-text-for-tales.html:3
 msgid "Tales"
-msgstr "O'zbek Xalq Ertaklari"
+msgstr "Ertaklar"
+
+#~ msgid "CALENDAR"
+#~ msgstr "Taqvim"
 
 #~ msgid "Menu:"
 #~ msgstr "Menyu"
