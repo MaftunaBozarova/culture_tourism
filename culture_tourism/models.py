@@ -1,7 +1,7 @@
 from django.db import models
 from django.core.urlresolvers import reverse
 from django.utils.text import slugify
-from redactor.fields import RedactorField
+# from redactor.fields import RedactorField
 from django.utils.translation import ugettext as _
 from taggit.managers import TaggableManager
 from treebeard.mp_tree import MP_Node
@@ -71,7 +71,7 @@ class MainArticle(models.Model):
 class Regions(models.Model):
     title = models.CharField(max_length=70)
     photo = models.ImageField(upload_to='regions/', blank=True)
-    body = RedactorField(verbose_name=u'Text')
+    body = RichTextField(verbose_name=u'Text')
 
     def __str__(self):
         return self.title
@@ -86,7 +86,7 @@ class Writer(models.Model):
     name = models.CharField(max_length=200)
     photo = models.ImageField(upload_to='writers/', blank=True)
     period = models.CharField(max_length=50, choices=PERIOD, default='second')
-    description = RedactorField(verbose_name=u'Text')
+    description = RichTextField(verbose_name=u'Text')
 
 
 class Slide(models.Model):
@@ -97,7 +97,7 @@ class Slide(models.Model):
 
 
 class OtherInfo(models.Model):
-    description = RedactorField(verbose_name=u'Text')
+    description = RichTextField(verbose_name=u'Text')
     promo_photo = models.ImageField()
     address = models.CharField(max_length=255, blank=True)
     phone_1 = models.CharField(max_length=17, blank=True)
@@ -134,7 +134,7 @@ class News(models.Model):
 class Gallery(models.Model):
     category = models.ForeignKey(Menyu, related_name='gallery')
     photo = models.ImageField(upload_to='gallery/')
-    description = RedactorField(verbose_name=u'Description')
+    description = RichTextField(verbose_name=u'Description')
     created = models.DateTimeField(auto_now_add=True)
 
     class Meta:
@@ -145,7 +145,7 @@ class Library(models.Model):
     lib_name = models.CharField(max_length=255, blank=True)
     lib_photo = models.ImageField(upload_to='library/', blank=True)
     lib_file = models.FileField(upload_to='library/', blank=True)
-    lib_description = RedactorField(verbose_name=u'Text')
+    lib_description = RichTextField(verbose_name=u'Text')
     lib_created = models.DateTimeField(auto_now_add=True, blank=True)
 
     @property
@@ -159,14 +159,14 @@ class Library(models.Model):
 class Feedback(models.Model):
     name = models.CharField(max_length=150, blank=True)
     email = models.EmailField(blank=True)
-    comment = RedactorField(verbose_name=u'Text')
+    comment = RichTextField(verbose_name=u'Text')
 
 
 class MostVisited(models.Model):
     title = models.CharField(max_length=200)
     region = models.ForeignKey(Regions, related_name='most_visiteds')
     photo = models.ImageField(upload_to='most-visited/', null=True)
-    body = RedactorField(verbose_name=u'Text', null=True)
+    body = RichTextField(verbose_name=u'Text', null=True)
     n_slug = models.SlugField(max_length=250, blank=True)
     r_slug = models.SlugField(max_length=250, blank=True)
 
@@ -181,7 +181,7 @@ class MostVisited(models.Model):
 
 class Maqollar(models.Model):
     title = models.CharField(blank=True, max_length=512)
-    body = RedactorField(verbose_name=u'Maqol')
+    body = RichTextField(verbose_name=u'Maqol')
     created = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):

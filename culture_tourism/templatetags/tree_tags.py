@@ -52,7 +52,7 @@ register.assignment_tag(most_visited)
 
 
 def clock():
-    return timezone.now()
+    return timezone.now
 register.assignment_tag(clock)
 
 
