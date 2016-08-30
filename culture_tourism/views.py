@@ -168,7 +168,7 @@ def regions(request, pk=None):
     gallery = Gallery.objects.all()[:9]
     if pk:
         chosen_region = Regions.objects.get(pk=pk)
-        return render(request, 'big-text.html', {'content': chosen_region, 'gallery': gallery()})
+        return render(request, 'big-text.html', {'content': chosen_region, 'gallery': gallery})
     all_regions = Regions.objects.all()[:13]
     return render(request, 'regions.html', {'regions': all_regions, 'gallery': gallery})
 
