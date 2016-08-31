@@ -1,5 +1,6 @@
 {% extends 'base-for-common.html' %}
 {% load i18n %}
+{% load thumbnail %}
 {% block title %}UzNation | {% trans 'Regions' %}{% endblock %}
 
 {% block main-row-div-1 %}
@@ -10,7 +11,8 @@
                 <article class="article side">
                     {% if forloop.counter|divisibleby:2 %}
                         <div class="image wow fadeInLeft" data-wow-delay="0.6s">
-                            <img src="{{ region.photo.url }}" alt="{{ region.title }}">
+                        {% thumbnail region.photo "220x144" crop="100%" as im %}
+                            <img src="{{ im.url }}" alt="{{ region.title }}">
                         </div>
                         <div class="text wow fadeInRight" data-wow-delay="0.6s">
 
@@ -36,7 +38,8 @@
                             </div>
                         </div>
                         <div class="image wow fadeInRight" data-wow-delay="0.6s">
-                            <img src="{{ region.photo.url }}" alt="{{ region.title }}">
+                        {% thumbnail region.photo "220x144" crop="100%" as img %}
+                            <img src="{{ img.url }}" alt="{{ region.title }}">
                         </div>
                     {% endif %}
 
