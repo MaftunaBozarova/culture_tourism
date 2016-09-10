@@ -10,12 +10,16 @@
         {% endif %}
     <li>
         <div class="holder">
+        <a href="{{ library.get_url }}" class="rectangle">
+            <p class="name">{{ library.lib_name }}</p>
+        </a>
             {% if library.lib_photo %}
                 <div class="img">
                     <img src="{{ library.lib_photo.url }}" alt="{{ library.lib_name }}"
                          style="height:159px;">
                 </div>
             {% endif %}
+
             <div class="download">
                 <a type="button" class="btn btn-primary" href="{{ library.get_url }}">{% trans 'Download' %}
                     <span class="glyphicon glyphicon-download"></span>
