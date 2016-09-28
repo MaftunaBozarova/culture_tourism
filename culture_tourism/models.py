@@ -65,7 +65,7 @@ class MainArticle(models.Model):
     subarticle = models.ManyToManyField(SubArticle, related_name='mainarticle')
 
     def __str__(self):
-        return '{} {}'.format(self.b_tild, self.b_box)
+        return '%s %s' % (self.b_tild, self.b_box)
 
 
 class Regions(models.Model):
@@ -78,14 +78,9 @@ class Regions(models.Model):
 
 
 class Writer(models.Model):
-    PERIOD = (
-        ('first', _('till 12 century')),
-        ('second', _('from 12th to 18th century')),
-        ('third', _('from 18th century till now'))
-    )
     name = models.CharField(max_length=200)
     photo = models.ImageField(upload_to='writers/', blank=True)
-    period = models.CharField(max_length=50, choices=PERIOD, default='second')
+    period = models.CharField(max_length=50, blank=True)
     description = RichTextField(verbose_name=u'Text')
 
 

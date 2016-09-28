@@ -10,9 +10,11 @@
         {% endif %}
     <li>
         <div class="holder">
+        {% if library %}
         <a href="{{ library.get_url }}" class="rectangle">
             <p class="name">{{ library.lib_name }}</p>
         </a>
+        {% endif %}
             {% if library.lib_photo %}
                 <div class="img">
                     <img src="{{ library.lib_photo.url }}" alt="{{ library.lib_name }}"
