@@ -65,7 +65,7 @@ class MainArticle(models.Model):
     subarticle = models.ManyToManyField(SubArticle, related_name='mainarticle')
 
     def __str__(self):
-        return '%s' % (self.b_tild)
+        return 'self.b_tild'
 
 
 class Regions(models.Model):
