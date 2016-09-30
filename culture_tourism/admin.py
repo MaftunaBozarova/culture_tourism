@@ -2,6 +2,7 @@ from django.contrib import admin
 from .models import *
 from treebeard.forms import movenodeform_factory
 from treebeard.admin import TreeAdmin
+from django.template.defaultfilters import safe
 
 
 class AdminMenu(TreeAdmin):
@@ -60,7 +61,11 @@ admin.site.register(Feedback, FeedbackAdmin)
 
 
 class SubArticleAdmin(admin.ModelAdmin):
-    list_display = ['title', 'photo', 'body', 'created']
+    list_display = ['title', 'photo', 'get_body', 'created']
+
+    def get_body(self, obj):
+        return safe(obj.body[:100])
+
 admin.site.register(SubArticle, SubArticleAdmin)
 
 
