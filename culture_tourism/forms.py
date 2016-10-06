@@ -9,7 +9,7 @@ class FeedBackForm(forms.ModelForm):
         'class': 'form-control', 'placeholder': 'Name'}))
     email = forms.EmailField(widget=forms.EmailInput(attrs={'class': 'form-control',
                                                             'id': 'email', 'placeholder': 'Email'}))
-    comment = forms.CharField(widget=RedactorEditor(attrs={'placeholder': 'Comment'}))
+    comment = forms.CharField(widget=forms.TextInput(attrs={'placeholder': 'Comment'}))
 
     class Meta:
         model = Feedback

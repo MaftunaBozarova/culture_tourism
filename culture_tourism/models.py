@@ -154,7 +154,7 @@ class Library(models.Model):
 class Feedback(models.Model):
     name = models.CharField(max_length=150, blank=True)
     email = models.EmailField(blank=True)
-    comment = RichTextField(verbose_name=u'Text')
+    comment = models.TextField()
 
 
 class MostVisited(models.Model):
