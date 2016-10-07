@@ -44,8 +44,6 @@ class SubArticle(models.Model):
         self.slug = slugify(self.title)
         super(SubArticle, self).save(*args, **kwargs)
 
-    def __str__(self):
-        return self.title
 
 
 class GeneralInfo(models.Model):
