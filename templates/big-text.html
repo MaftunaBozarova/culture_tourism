@@ -5,8 +5,10 @@
 
 {% block main-row-div-1 %}
     <h2>{{ content.title }}</h2>
+    {% if content.photo %}
     <div class="img"><img src="{{ content.photo|thumbnail_url:'big_text_content' }}" alt="{{ content.title }}"
                           style="width:900px; height:500px;"></div>
+    {% endif %}
     <div class="text">
         <p>{{ content.body|safe }}</p>
     </div>
@@ -28,18 +30,22 @@
                     <li>
                         <div class="holder">
                             <div class="img">
+                                {% if related.photo %}
                                 <img src="{{ related.photo.url }}" alt="{{ related.title }}">
+                                {% endif %}
                             </div>
                             <div class="caption">
                                 <div class="c1">
                                     <div class="c2">
                                         <strong class="title">{{ related.title }}</strong>
                                         <ul class="icons">
+                                            {% if related.photo %}
                                             <li><a href="{{ related.photo|thumbnail_url:'related' }}"
                                                    class="lightbox"><i class="icon-resize-full-alt"></i>
                                                 <span>resize</span></a></li>
                                             <li><a href="{% url 'uznation:small' pk=related.pk %}">
                                                 <i class="icon-attach"></i> <span>attach</span></a></li>
+                                            {% endif %}
                                         </ul>
                                     </div>
                                 </div>
@@ -56,8 +62,10 @@
 {% block pics %}
     <ul class="instagram">
         {% for pic in gallery %}
+            {% if pic.photo %}
             <li><a href="#"><img src="{{ pic.photo.url }}" alt="{{ pic.description|safe }}"
                                  style="width:83px; height:83px;"></a></li>
+            {% endif %}
         {% endfor %}
     </ul>
 {% endblock %}

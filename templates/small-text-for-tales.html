@@ -9,7 +9,9 @@
             <article class="article side">
                 {% if forloop.counter|divisibleby:2 %}
                     <div class="image wow fadeInLeft" data-wow-delay="0.6s">
+                    {% if content.photo %}
                         <img src="{{ content.tale.photo.url }}" alt="{{ content.tale.title }}">
+                        {% endif %}
                     </div>
                     <div class="text wow fadeInRight" data-wow-delay="0.6s">
 
@@ -35,7 +37,9 @@
                         </div>
                     </div>
                     <div class="image wow fadeInRight" data-wow-delay="0.6s">
+                    {% if content.tale.photo %}
                         <img src="{{ content.tale.photo.url }}" alt="{{ content.tale.title }}">
+                        {% endif %}
                     </div>
                 {% endif %}
 
@@ -50,8 +54,10 @@
 {% block pics %}
     <ul class="instagram">
         {% for pic in gallery %}
+            {% if pic.photo %}
             <li><a href="#"><img src="{{ pic.photo.url }}" alt="{{ pic.description|safe }}"
                                  style="width:83px; height:83px;"></a></li>
+            {% endif %}
         {% endfor %}
     </ul>
 {% endblock %}

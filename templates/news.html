@@ -4,8 +4,10 @@
 
 {% block main-row-div-1 %}
     <h2>{{ content.news_title }}</h2>
+    {% if content.news_photo %}
     <div class="img"><img src="{{ content.news_photo.url }}" alt="{{ content.news_title }}"
                           style="width:900px; height:500px;"></div>
+    {% endif %}
     <div class="text">
 
         <p>{{ content.news_body|safe }}</p>
