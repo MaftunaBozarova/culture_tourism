@@ -44,6 +44,9 @@ class SubArticle(models.Model):
         self.slug = slugify(self.title)
         super(SubArticle, self).save(*args, **kwargs)
 
+    def __str__(self):
+        return '%s %s' % (self.title, str(self.id))
+
 
 
 class GeneralInfo(models.Model):
@@ -63,7 +66,7 @@ class MainArticle(models.Model):
     subarticle = models.ManyToManyField(SubArticle, related_name='mainarticle')
 
     def __str__(self):
-        return self.id
+        return str(self.id)
 
 
 class Regions(models.Model):
