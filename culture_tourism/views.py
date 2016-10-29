@@ -128,13 +128,26 @@ def adiblar(request):
     except EmptyPage:
         posts = paginator.page(paginator.num_pages)
 
-    return render(request, 'small-text.html', {'page': page, 'posts': posts, 'gallery': gallereya
+    return render(request, 'small-text-adib.html', {'page': page, 'posts': posts, 'gallery': gallereya
                                                })
 
 
 def small_to_big(request, pk):
     gallery = Gallery.objects.all()[:9]
     content = SubArticle.objects.get(pk=pk)
+
+    post_tags_ids = content.tags.values_list('id', flat=True)
+    related_topics = SubArticle.objects.filter(tags__in=post_tags_ids).exclude(id=content.id)
+    related_topics = related_topics.annotate(same_tags=Count('tags')).order_by('-same_tags', '-created')
+    related_topics = related_topics[:3]
+    return render(request, 'big-text.html', {'content': content, 'related_topics': related_topics,
+                                             'gallery': gallery
+                                             })
+
+
+def small_to_big_writers(request, pk):
+    gallery = Gallery.objects.all()[:9]
+    content = Writer.objects.get(pk=pk)
 
     post_tags_ids = content.tags.values_list('id', flat=True)
     related_topics = SubArticle.objects.filter(tags__in=post_tags_ids).exclude(id=content.id)

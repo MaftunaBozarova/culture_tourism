@@ -1,0 +1,63 @@
+{% extends 'base-for-common-right.html' %}
+{% load i18n %}
+{% block title %}UzNation{% endblock %}
+
+{% block main-row-div-1 %}
+        <div class="article-holder">
+            {% for content in posts %}
+                <!-- article -->
+                <article class="article side">
+                    {% if forloop.counter|divisibleby:2 %}
+                        <div class="image wow fadeInLeft" data-wow-delay="0.6s">
+                        {% if content.photo %}
+                            <img src="{{ content.photo.url }}" alt="{{ content.title }}">
+                            {% endif %}
+                        </div>
+                        <div class="text wow fadeInRight" data-wow-delay="0.6s">
+
+                            <div class="txt">
+                                <h2>{{ content.title }}</h2>
+                                <p>{{ content.body|truncatechars:250|safe }}</p>
+                                <a class="more" href="{% url 'uznation:small_adib' pk=content.pk %}">
+                                    <span>{% trans 'MORE' %}</span>
+                                    <i class="icon-right-thin"></i>
+                                </a>
+                            </div>
+                        </div>
+                    {% else %}
+                        <div class="text wow fadeInLeft" data-wow-delay="0.6s">
+
+                            <div class="txt">
+                                <h2>{{ content.title }}</h2>
+                                <p>{{ content.body|truncatechars:250|safe }}</p>
+                                <a class="more" href="{% url 'uznation:small_adib' pk=content.pk %}">
+                                    <span>{% trans 'MORE' %}</span>
+                                    <i class="icon-right-thin"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="image wow fadeInRight" data-wow-delay="0.6s">
+                        {% if content.photo %}
+                            <img src="{{ content.photo.url }}" alt="{{ content.title }}">
+                            {% endif %}
+                        </div>
+                    {% endif %}
+
+                </article>
+            {% endfor %}
+        </div>
+        <!-- paginations -->
+        {% include 'pagination.html' with page=posts %}
+{% endblock %}
+
+
+{% block pics %}
+    <ul class="instagram">
+        {% for pic in gallery %}
+            {% if pic.photo %}
+            <li><a href="#"><img src="{{ pic.photo.url }}" alt="{{ pic.description|safe }}"
+                                 style="width:83px; height:83px;"></a></li>
+            {% endif %}
+        {% endfor %}
+    </ul>
+{% endblock %}
