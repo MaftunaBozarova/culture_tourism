@@ -1756,7 +1756,7 @@ a:focus {
 }
 
 .info.info-3 .tild {
-	margin: 28px -159px 0 0;
+	margin: 28px -45px 0 0;
 	right: 50%;
 }
 
@@ -5387,7 +5387,7 @@ float: right;
 }
 /*---------EXTRA-----------*/
 .border {
- background-color: rgba(0, 204, 250, 0.49);/*rgba(0, 171, 253, 0.45)*/
+ background-color: white;/*rgba(0, 171, 253, 0.45)*/
  padding: 3px 0px;
 }
 
