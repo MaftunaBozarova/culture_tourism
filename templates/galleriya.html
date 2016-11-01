@@ -3,7 +3,6 @@
 {% block title %}UzNation | {% trans 'Gallery' %}{% endblock %}
 
 {% block main-row-div-1 %}
-    <div class="col-lg-9 col-sm-8 col-xs-12 col-lg-push-3 col-sm-push-4 content">
         {% for menu in menus %}
             {% if menu.gallery.count > 0 %}
                 <div class="masonry-holder">
@@ -23,7 +22,6 @@
                 </div>
             {% endif %}
         {% endfor %}
-    </div>
 {% endblock %}
 
 {% block pics %}

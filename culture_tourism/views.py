@@ -128,7 +128,7 @@ def adiblar(request):
     except EmptyPage:
         posts = paginator.page(paginator.num_pages)
 
-    return render(request, 'small-text-adib.html', {'page': page, 'posts': posts, 'gallery': gallereya
+    return render(request, 'small-text-adiblar.html', {'page': page, 'posts': posts, 'gallery': gallereya
                                                })
 
 
