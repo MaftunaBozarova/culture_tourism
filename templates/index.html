@@ -85,14 +85,14 @@
                                     <h2 class="tild">{{ article.b_tild }}</h2>
                                     <!-- <span class="num">O'ZBEK  SAN'ATI</span>	-->
                                     <ul class="filter">
-                                        <li class="active"><a href="#">Barcha<br/>San'at<br/>Galleriyasi<br/><br/></a>
+                                        <li class="active"><a href="#">{% trans "Barcha<br/>San'at<br/>Galleriyasi" %}<br/><br/></a>
                                         </li>
-                                        <li><a href="#" data-filter=".work-b">{{ article.subarticle.last.title }}<br/>San'ati<br/><br/></a>
+                                        <li><a href="#" data-filter=".work-b">{{ article.subarticle.last.title }}<br/><br/><br/></a>
                                         </li>
                                         <li><a href="#"
-                                               data-filter=".work-w">{{ article.subarticle.first.get_next.title }}<br/>San'ati<br/><br/></a>
+                                               data-filter=".work-w">{{ article.subarticle.first.get_next.title }}<br/><br/><br/></a>
                                         </li>
-                                        <li><a href="#" data-filter=".work-m">{{ article.subarticle.first.title }}<br/>San'ati<br/><br/></a>
+                                        <li><a href="#" data-filter=".work-m">{{ article.subarticle.first.title }}<br/><br/><br/></a>
                                         </li>
                                     </ul>
                                     <br/>

@@ -10,14 +10,14 @@
                     {% if forloop.counter|divisibleby:2 %}
                         <div class="image wow fadeInLeft" data-wow-delay="0.6s">
                         {% if content.photo %}
-                            <img src="{{ content.photo.url }}" alt="{{ content.title }}">
+                            <img src="{{ content.photo.url }}" alt="{{ content.name }}">
                             {% endif %}
                         </div>
                         <div class="text wow fadeInRight" data-wow-delay="0.6s">
 
                             <div class="txt">
-                                <h2>{{ content.title }}</h2>
-                                <p>{{ content.body|truncatechars:200|safe }}</p>
+                                <h2>{{ content.name }}</h2>
+                                <p>{{ content.description|truncatechars:200|safe }}</p>
                                 <a class="more" href="{% url 'uznation:small_adib' pk=content.pk %}">
                                     <span>{% trans 'MORE' %}</span>
                                     <i class="icon-right-thin"></i>
@@ -28,8 +28,8 @@
                         <div class="text wow fadeInLeft" data-wow-delay="0.6s">
 
                             <div class="txt">
-                                <h2>{{ content.title }}</h2>
-                                <p>{{ content.body|truncatechars:200|safe }}</p>
+                                <h2>{{ content.name }}</h2>
+                                <p>{{ content.body|description:200|safe }}</p>
                                 <a class="more" href="{% url 'uznation:small_adib' pk=content.pk %}">
                                     <span>{% trans 'MORE' %}</span>
                                     <i class="icon-right-thin"></i>

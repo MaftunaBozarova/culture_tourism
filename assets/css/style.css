@@ -2303,7 +2303,7 @@ a:focus {
 }
 
 .info .tild {
-	margin: 0 -19px 0 0;
+	margin: 50 -60px 0 0;
 	font-size: 24px;
 	line-height: 24px;
 	display: inline-block;
@@ -5398,8 +5398,7 @@ p.name {
 }
 
 #tild1{
- margin: 45px 0 0 0;
- padding-right: 30px;
+ margin: 55px 0 0 0;
 }/*NEW*/
 
 @media (min-width: 768px) {

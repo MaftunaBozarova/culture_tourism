@@ -255,7 +255,7 @@
                         <h2>{% trans 'TAGS' %}</h2>
                         {% for tag in all_tags %}
                             {#                            TODO: make random numbers#}
-                            <a href="#" style="font-size:{{ random }}px;">{{ tag }}</a>
+                            <a href="#">{{ tag }}</a>
                         {% endfor %}
                     </div>
                     <div class="widget wow fadeInUp" data-wow-delay="0.6s">
@@ -396,6 +396,8 @@
 <script src="{% static 'js/jquery-1.11.3.min.js' %}"></script>
 <script type="text/javascript" src="{% static 'js/plugins.js' %}"></script>
 <script type="text/javascript" src="{% static 'js/functions.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/randomize.js' %}"></script>
+
 <script type="text/javascript">
     if (navigator.userAgent.match(/IEMobile\/10\.0/)) {
         var msViewportStyle = document.createElement('style')
