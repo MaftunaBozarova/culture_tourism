@@ -257,7 +257,6 @@
                     <div class="widget add wow fadeInUp" id="random" data-wow-delay="0.6s">
                         <h2>{% trans 'TAGS' %}</h2>
                         {% for tag in all_tags %}
-                            {#                            TODO: make random numbers#}
                             <a href="#">{{ tag }}</a>
                         {% endfor %}
                     </div>
@@ -285,7 +284,6 @@
                         <h2>{% trans 'TIME IN UZBEKISTAN' %}</h2>
                         <div class="tags">
                             <h2>{{ clock|date:'H : i' }}</h2>
-
                         </div>
                     </div>
                 </div>
@@ -298,7 +296,7 @@
                 <div class="holder">
                     <strong class="logo-footer">
                         <a href="#">
-                            <i class="icon">UzNation</i>
+                            <i class="icon">UzNations</i>
                         </a>
                     </strong>
                     <!-- footer-txt -->
@@ -386,7 +384,7 @@
 
                     {% endfor %}
                 </ul>
-                <span class="copyright"><a href="{% url 'uznation:home' %}">UzNation</a> &copy;
+                <span class="copyright"><a href="{% url 'uznation:home' %}">UzNations</a> &copy;
                     2016. {% trans 'All rights reserved' %}.</span>
             </div>
 

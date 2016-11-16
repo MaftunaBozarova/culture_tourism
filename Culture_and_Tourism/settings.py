@@ -41,7 +41,6 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'easy_thumbnails',
-    'redactor',
     'culture_tourism',
     'taggit',
     'treebeard',
@@ -68,7 +67,7 @@ ROOT_URLCONF = 'Culture_and_Tourism.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [location('templates')],
+        'DIRS': ['templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -130,7 +129,7 @@ django.conf.locale.LANG_INFO.update(EXTRA_LANG_INFO)
 MODELTRANSLATION_DEFAULT_LANGUAGE = 'en'
 
 LOCALE_PATHS = (
-    location('locale'),
+    os.path.join(BASE_DIR, 'locale'),
 )
 
 # Static files (CSS, JavaScript, Images)
@@ -163,13 +162,6 @@ THUMBNAIL_ALIASES = {
 
     }
 }
-
-REDACTOR_OPTIONS = {'lang': 'en', 'plugins': [
-    'clips', 'textexpander', 'filemanager', 'fullscreen',
-    'imagemanager', 'properties', 'source', 'table', 'video'
-]
-                    }
-REDACTOR_UPLOAD = 'uploads/'
 
 CKEDITOR_CONFIGS = {
     'default': {

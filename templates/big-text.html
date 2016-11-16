@@ -1,7 +1,7 @@
 {% extends 'base-for-common.html' %}
 {% load thumbnail %}
 {% load i18n %}
-{% block title %}UzNation | {{ content.title }}{% endblock %}
+{% block title %}UzNations | {{ content.title }}{% endblock %}
 
 {% block main-row-div-1 %}
     <h2>{{ content.title }}</h2>
@@ -19,7 +19,6 @@
     <span class='st_linkedin_large' displayText='LinkedIn'></span>
     <span class='st_pinterest_large' displayText='Pinterest'></span>
     <span class='st_facebook_large' displayText='Facebook'></span>
-    <span class='st_fblike_large' displayText='Facebook Like'></span>
 
     {% if content.tags %}
         <p>

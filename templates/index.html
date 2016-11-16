@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 {% load thumbnail %}
 {% load i18n %}
-{% block title %}UzNation{% endblock %}
+{% block title %}UzNations{% endblock %}
 {% block main %}
     <main id="main">
         <!-- visual -->
@@ -47,7 +47,7 @@
                                 </div>
                                 <div class="txt-frame wow fadeInUp" data-wow-delay="0.6s">
                                     <h3 style="color:blue">{{ article.subarticle.last.title }}</h3>
-                                    <p>{{ article.subarticle.last.body|truncatechars:1158|safe }}</p>
+                                    {{ article.subarticle.last.body|truncatechars:1158|safe }}
                                 </div>
                             </div>
                         {% endif %}
@@ -56,7 +56,7 @@
                                 <div class="txt-frame wow fadeInUp" data-wow-delay="0.6s">
                                     <p align="center"
                                        style="color:blue;font-size:30px; font-weight: 700;">{{ article.subarticle.last.title }}</p>
-                                    <p>{{ article.subarticle.last.body|safe }}</p>
+                                    {{ article.subarticle.last.body|safe }}
                                 </div>
                                 <div class="img-frame">
                                     <div class="image wow fadeInRight" data-wow-delay="0.6s">

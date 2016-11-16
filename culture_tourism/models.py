@@ -1,7 +1,6 @@
 from django.db import models
 from django.core.urlresolvers import reverse
 from django.utils.text import slugify
-# from redactor.fields import RedactorField
 from django.utils.translation import ugettext as _
 from taggit.managers import TaggableManager
 from treebeard.mp_tree import MP_Node

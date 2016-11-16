@@ -1269,12 +1269,12 @@ a:focus {
 
 #header .navbar-nav .dropdown-menu a {
   border-bottom: 1px solid #e5e5e5;
-  padding: 16px 10px 16px 45px;
+  padding: 16px 10px 16px 5px;
   text-transform: lowercase;
   text-transform: capitalize;
   line-height: 18px;
   font-size: 16px;
-	width: 100%;
+  width: 100%;
 }
 
 #header .navbar-nav .dropdown-menu li:last-child a{border-bottom: 0;}

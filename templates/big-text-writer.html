@@ -1,0 +1,37 @@
+{% extends 'base-for-common.html' %}
+{% load thumbnail %}
+{% load i18n %}
+{% block title %}UzNations | {{ content.name }}{% endblock %}
+
+{% block main-row-div-1 %}
+    <h2>{{ content.name }}</h2>
+    {% if content.photo %}
+    <div class="img"><img src="{{ content.photo|thumbnail_url:'big_text_content' }}" alt="{{ content.name }}"
+                          style="width:900px; height:500px;"></div>
+    {% endif %}
+    <div class="text">
+        <p>{{ content.description|safe }}</p>
+    </div>
+
+    <span class='st_vkontakte_large' displayText='Vkontakte'></span>
+    <span class='st_googleplus_large' displayText='Google +'></span>
+    <span class='st_twitter_large' displayText='Tweet'></span>
+    <span class='st_linkedin_large' displayText='LinkedIn'></span>
+    <span class='st_pinterest_large' displayText='Pinterest'></span>
+    <span class='st_facebook_large' displayText='Facebook'></span>
+
+    <!-- project-area -->
+
+{% endblock %}
+
+
+{% block pics %}
+    <ul class="instagram">
+        {% for pic in gallery %}
+            {% if pic.photo %}
+            <li><a href="#"><img src="{{ pic.photo.url }}" alt="{{ pic.description|safe }}"
+                                 style="width:83px; height:83px;"></a></li>
+            {% endif %}
+        {% endfor %}
+    </ul>
+{% endblock %}

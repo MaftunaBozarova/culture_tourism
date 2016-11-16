@@ -1,12 +1,12 @@
 {% extends 'base-for-common.html' %}
 {% load i18n %}
-{% block title %}Uznation{% endblock %}
+{% block title %}Uznations{% endblock %}
 
 {% block main-row-div-1 %}
         <!-- gallery -->
         <div class="readmore">
 
-            <h2>You searched for {{ search_query }}</h2>
+            <h2>{% trans 'You searched for ' %}{{ search_query }}</h2>
 
             {% for result in searchS %}
                 <div class="widget wow fadeInUp">
@@ -41,7 +41,7 @@
                 </div>
             {% endfor %}
         {% if searchS.count == 0 and searchR.count == 0 and searchN.count == 0 and searchW.count == 0 %}
-        <h3>No Results Sorry !!!</h3>
+        <h3>{% trans 'No Results !!!' %}</h3>
         {% endif %}
         </div>
 {% endblock %}

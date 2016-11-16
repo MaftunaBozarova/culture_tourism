@@ -110,7 +110,7 @@ msgstr "Ya"
 #: .\culture_tourism\templates\base-for-common-right.html:254
 #: .\culture_tourism\templates\base-for-common.html:253
 msgid "TAGS"
-msgstr "Teglar"
+msgstr "TEGLAR"
 
 #: .\culture_tourism\templates\base-for-common-right.html:261
 #: .\culture_tourism\templates\base-for-common.html:260
@@ -121,7 +121,7 @@ msgstr "YANGILIKLAR"
 #: .\culture_tourism\templates\base-for-common-right.html:281
 #: .\culture_tourism\templates\base-for-common.html:280
 msgid "TIME IN UZBEKISTAN"
-msgstr "O'zbekistonda soat"
+msgstr "O'ZBEKISTONDA SOAT"
 
 #: .\culture_tourism\templates\base-for-common-right.html:308
 #: .\culture_tourism\templates\base-for-common.html:307
@@ -214,7 +214,7 @@ msgstr "Oktabr"
 #, fuzzy
 #| msgid "Phone number"
 msgid "November"
-msgstr "Telefon raqam"
+msgstr "Noyabr"
 
 #: .\culture_tourism\templates\base-for-common-right.html:417
 #: .\culture_tourism\templates\base-for-common.html:416
@@ -237,7 +237,7 @@ msgstr "Bu veb-saytdan ko'zlangan maqsad"
 msgid ""
 "This website is made to share some useful information about Uzbek "
 "nationality and\n"
-"                    traditions. <b><em>Uznation.inha.uz</em></b>\n"
+"                    traditions. <b><em>Uznations.iutlab.uz</em></b>\n"
 "                    is always ready to give help for users, volunteers, "
 "local people so that they can easily\n"
 "                    get useful information on Uzbekistan and its "
@@ -265,7 +265,7 @@ msgid ""
 "                    wonderful future”."
 msgstr ""
 "Bu vebsayt O’zbekistonning boy madaniyati, milliy urf-odatlar va an’analari haqida to’liq ma’lumot bera oladigan manba sifatida yaratilgan. "
-"<b><em>Uznation.inha.uz</em></b> doim foydalanuvchilarga, ko'ngillilarga va tub aholiga "
+"<b><em>Uznations.iutlab.uz</em></b> doim foydalanuvchilarga, ko'ngillilarga va tub aholiga "
 "O'zbekiston haqida sermazmun ma'lumotlar olishda yordam bersihga tayyordir. "
 "Siz bu saytdan O’zbekiston haqida foydali manbalar, qiziqarli faktlar jamlanmasi, balki tarixiy obidalar, ko’zga ko’rinarli "
 "sayilgohlar, ko’ngilochar maskanlar, ilhombaxsh san’at asarlari, qo’l mehnatlari, buyuk shaxslar, yozuvchilar, olimlar, "
@@ -305,12 +305,12 @@ msgid ""
 "site used their useful information as an\n"
 "                    extra source. Other special thanks are for<b><em> "
 "Voriskhon</em></b> for making amazing logo for\n"
-"                    <b>Uznation.inha.uz</b>"
+"                    <b>Uznations.iutlab.uz</b>"
 msgstr ""
 "Bu mehnat orqasida turgan jamoa a’zolari bilan tanishtiradigan bo’lsak, "
 "jamoamiz 3 kishi: <b><em>Umar Xoldarbekov</em></b> backend dasturchi, <b><em>Maftuna Bozorova</em></b> va <b><em>Shaxnoza Ozodova</em></b> frontend dasturchilar, "
 "Toshkent shahridagi Inha universitetining ICE (Information and Communication Engineering) ya’ni Axborot va Aloqa Muhandisligi fakultetiti talabalaridan iborat. "
-"Bizga yaqindan yordam bergan va qo’llab quvvatlagan universitet xodimlariga, ba'zi saytlarga va <b><em>Uznation.inha.uz</em></b> sayti logosini yaratishda o’z mehnatini ayamagan dizayner <b><em>Vorisxon</em></b>ga o’z minnatdorchiligimizni bildiramiz."
+"Bizga yaqindan yordam bergan va qo’llab quvvatlagan universitet xodimlariga, ba'zi saytlarga va <b><em>Uznations.iutlab.uz</em></b> sayti logosini yaratishda o’z mehnatini ayamagan dizayner <b><em>Vorisxon</em></b>ga o’z minnatdorchiligimizni bildiramiz."
 
 #: .\templates\big-text.html:15
 msgid "Tags"
