@@ -7,7 +7,7 @@
             {% for content in posts %}
                 <!-- article -->
                 <article class="article side">
-                    {% if forloop.counter|divisibleby:2 %}
+                    {% if forloop.counter|divisibleby:"2" %}
                         <div class="image wow fadeInLeft" data-wow-delay="0.6s">
                         {% if content.photo %}
                             <img src="{{ content.photo.url }}" alt="{{ content.title }}">

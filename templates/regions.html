@@ -8,7 +8,7 @@
             {% for region in regions %}
                 <!-- article -->
                 <article class="article side">
-                    {% if forloop.counter|divisibleby:2 %}
+                    {% if forloop.counter|divisibleby:"2" %}
                         <div class="image wow fadeInLeft" data-wow-delay="0.6s">
                         {% thumbnail region.photo "220x144" crop="100%" as im %}
                             <img src="{{ im.url }}" alt="{{ region.title }}">
@@ -17,7 +17,7 @@
 
                             <div class="txt">
                                 <h2>{{ region.title }}</h2>
-                                <p>{{ region.body|truncatechars:200|safe }}</p>
+                                {{ region.body|truncatechars:200|safe }}
                                 <a class="more" href="{% url 'uznation:regions' pk=region.pk %}">
                                     <span>{% trans 'MORE' %}</span>
                                     <i class="icon-right-thin"></i>
@@ -29,7 +29,7 @@
 
                             <div class="txt">
                                 <h2>{{ region.title }}</h2>
-                                <p>{{ region.body|truncatechars:200|safe }}</p>
+                                {{ region.body|truncatechars:200|safe }}
                                 <a class="more" href="{% url 'uznation:regions' pk=region.pk %}">
                                     <span>{% trans 'MORE' %}</span>
                                     <i class="icon-right-thin"></i>
