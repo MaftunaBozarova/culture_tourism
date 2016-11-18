@@ -279,10 +279,7 @@
                     <div class="widget wow fadeInUp" data-wow-delay="0.6s"
                          style="visibility: visible; animation-delay: 0.6s; animation-name: fadeInUp;">
                         <h2>{% trans 'TIME IN UZBEKISTAN' %}</h2>
-                        <div class="tags">
-                            <h2>{{ clock|date:'H : i' }}</h2>
-
-                        </div>
+                        <div id="clockDisplay" class="clockStyle"></div>
                     </div>
                 </div>
             </div>
@@ -449,6 +446,34 @@
     document.querySelector('#calendar2 thead tr:nth-child(1) td:nth-child(3)').onclick = function () {
         Calendar2("calendar2", document.querySelector('#calendar2 thead td:nth-child(2)').dataset.year, parseFloat(document.querySelector('#calendar2 thead td:nth-child(2)').dataset.month) + 1);
     }
+
+    function renderTime() {
+        var currentTime = new Date();
+        var h = currentTime.getHours();
+        var m = currentTime.getMinutes();
+        var s = currentTime.getSeconds();
+        if (h == 0) {
+            h = 12;
+        }
+        else if (h > 12) {
+            h = h - 12;
+        }
+        if (h < 10) {
+            h = "0" + h;
+        }
+        if (m < 10) {
+            m = "0" + m;
+        }
+        if (s < 10) {
+            s = "0" + s;
+        }
+
+        var myClock = document.getElementById('clockDisplay');
+        myClock.textContent = h + ":" + m + ":" + s;
+        setTimeout('renderTime()', 1000);
+    }
+    renderTime();
+
 </script>
 
 </body>

@@ -43,7 +43,8 @@
   }
 
   .info .txt-holder .images img {
-    padding: 30px 68px 0 0;/*NEW*/
+    width: 100%;
+    padding: 20px 72px 6px 10px;/*NEW*/
   }
 
   .info .slider .pagination {
@@ -140,8 +141,9 @@
   }
 
   .info.info-2 .tild {
-    left: -12px;
+    left: -25px;
     color: white;
+    margin-top: 40px;
   }
 
   /*.info.info-3 .tild {
@@ -166,7 +168,7 @@
   }
 
   .info.info-3 .tild {
-    right: 63%;/*NEW*/
+    right: 50%;/*NEW*/
   }
 
   .info .filter {
@@ -455,7 +457,7 @@
   }
 
   .info.info-3 .tild {
-    margin: 28px -30px 0 0;
+    margin: 28px -70px 0 0;
   }
 
   .info.service-area .tild {
@@ -580,7 +582,7 @@
     line-height: 22px;
   }
   .info .txt-frame p {
-    margin: 6 12px 20px;/*NEW*/
+    margin: 6px 12px 20px;/*NEW*/
   }
   .info .txt-frame h3 {
     font-size: 30px;
@@ -1243,7 +1245,7 @@
 
   .promo img {
     max-width: inherit;
-    display: block;
+    display: none;
     position: relative;
     left: 50%;
     width: 1770px;
@@ -1370,8 +1372,6 @@
 
   .logo {
     position: absolute;
-    left: 15px;
-    top: 9px;
   }
 
   .align-right {
@@ -1383,13 +1383,12 @@
   }
 
   .align-right .search-area {
-    width: 100%;
+    width: 38%;
     text-align: center;
-    display: none;
   }
 
   .navbar-toggle {
-    margin-right: 0;
+    margin-right: -275px;
   }
 
   #header .navbar-nav a:after,
@@ -1531,7 +1530,7 @@
   }
 
   .info:first-child .txt-frame {
-    padding: 0;
+    padding: 2px;
     width: 100%;
   }
 
@@ -1547,7 +1546,7 @@
   }
 
   .info.info-2 .txt-frame .text-box {
-    padding: 10px;
+    padding: 2px;
   }
 
   .info .txt-frame .text-box > li:first-child {
@@ -1656,10 +1655,17 @@
     padding: 25px 0;
   }
 
+
+
   .info .txt-holder .images,
   .info .txt-holder .txts {
     display: block;
     width: 100%;
+  }
+
+  .info .txt-holder .images img{
+    width: 100%;
+    padding: 0;
   }
 
   .info .services {

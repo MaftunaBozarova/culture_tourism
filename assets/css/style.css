@@ -5038,6 +5038,17 @@ float: right;
 	z-index: 8040;
 }
 
+.clockStyle{
+   font-size: 25px;
+    text-align: left;
+    font-family: "Times New Roman", sans-serif;
+    color: rgba(51, 51, 51, 0.91);
+
+  margin: 0 auto;
+  padding:  0px;
+  font-weight: bold;
+}/*NEW*/
+
 .fancybox-close:after {
 	top: 33px;
 	right: 38px;

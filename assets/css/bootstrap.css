@@ -1220,7 +1220,9 @@ h6, .h6 {
 
 p {
   margin: 16 8 10px;
-  letter-spacing: 2px; }
+  letter-spacing: 2px;
+width: 90%
+}
 
 .lead {
   margin-bottom: 20px;
