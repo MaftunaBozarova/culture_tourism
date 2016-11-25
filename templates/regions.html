@@ -10,7 +10,7 @@
                 <article class="article side">
                     {% if forloop.counter|divisibleby:"2" %}
                         <div class="image wow fadeInLeft" data-wow-delay="0.6s">
-                        {% thumbnail region.photo "220x144" crop="100%" as im %}
+                        {% thumbnail region.photo "220x144" as im %}
                             <img src="{{ im.url }}" alt="{{ region.title }}">
                         </div>
                         <div class="text wow fadeInRight" data-wow-delay="0.6s">
@@ -37,11 +37,10 @@
                             </div>
                         </div>
                         <div class="image wow fadeInRight" data-wow-delay="0.6s">
-                        {% thumbnail region.photo "220x144" crop="100%" as img %}
+                        {% thumbnail region.photo "220x144" as img %}
                             <img src="{{ img.url }}" alt="{{ region.title }}">
                         </div>
                     {% endif %}
-
                 </article>
             {% endfor %}
         </div>
