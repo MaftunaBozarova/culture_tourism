@@ -6,7 +6,7 @@
 {% block main-row-div-1 %}
     <h2>{{ content.title }}</h2>
     {% if content.photo %}
-    <div class="img" style="width: 650px; height: 500px"><img src="{{ content.photo|thumbnail_url:'big_text_content' }}" alt="{{ content.title }}"
+    <div class="img" style="width: 650px; height: 500px;"><img src="{{ content.photo|thumbnail_url:'big_text_content' }}" alt="{{ content.title }}"
                           style="width:900px; height:500px;"></div>
     {% endif %}
     <div class="text">
